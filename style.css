@@ -1,0 +1,741 @@
+/* Reinicio global para que todos los navegadores partan de las mismas medidas */
+
+* {
+
+box-sizing: border-box; /* Incluye borde y relleno dentro del ancho y alto total de cada caja */
+
+margin: 0; /* Elimina márgenes externos que ponen los navegadores por defecto */
+
+padding: 0; /* Elimina rellenos internos por defecto */
+
+}
+
+/* Variables de colores corporativos para modificar toda la paleta desde un solo bloque */
+
+:root {
+
+--navy: #0b2545; /* Azul marino profundo principal de Kamada */
+
+--ocean: #134074; /* Azul océano secundario para degradados y acentos */
+
+--gold: #d99b26; /* Dorado principal para botones de conversión y etiquetas */
+
+--gold-hover: #eab308; /* Dorado más luminoso cuando el usuario pasa el cursor */
+
+--light-bg: #f4f7fa; /* Fondo gris azulado suave para alternar secciones */
+
+--border-gray: #e2e8f0; /* Gris claro para bordes sutiles en tarjetas */
+
+--text-dark: #1e293b; /* Color principal de lectura con buen contraste */
+
+--text-muted: #475569; /* Gris intermedio para descripciones secundarias */
+
+--white: #ffffff; /* Blanco puro para fondos y textos sobre zonas oscuras */
+
+}
+
+/* Configuración base de desplazamiento y tipografía en toda la web */
+
+html {
+
+scroll-behavior: smooth; /* Hace que al tocar un enlace del menú baje suavemente */
+
+font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía limpia nativa que carga al instante */
+
+color: var(--text-dark); /* Aplica el color oscuro principal a todo el texto */
+
+line-height: 1.6; /* Da espacio cómodo entre líneas para facilitar la lectura */
+
+}
+
+/* Contenedor reutilizable que centra el contenido y evita que se estire demasiado en monitores grandes */
+
+.container {
+
+max-width: 1140px; /* Ancho máximo profesional en escritorio */
+
+margin: 0 auto; /* Centra el bloque horizontalmente en la pantalla */
+
+padding: 0 20px; /* Deja margen lateral de seguridad en teléfonos y tabletas */
+
+}
+
+/* Barra de navegación superior fija */
+
+.navbar {
+
+background-color: var(--white); /* Fondo blanco limpio */
+
+border-bottom: 1px solid var(--border-gray); /* Línea fina que separa el menú del contenido */
+
+position: sticky; /* Mantiene la barra visible mientras el usuario baja por la página */
+
+top: 0; /* La fija exactamente al borde superior */
+
+z-index: 100; /* Garantiza que siempre quede por encima de imágenes y tarjetas */
+
+}
+
+/* Organización interna de la barra superior (logo a la izquierda, enlaces a la derecha) */
+
+.nav-content {
+
+display: flex; /* Coloca los elementos en fila horizontal */
+
+justify-content: space-between; /* Envía el logo al extremo izquierdo y el menú al derecho */
+
+align-items: center; /* Centra ambos verticalmente */
+
+height: 82px; /* Altura fija y equilibrada para el encabezado */
+
+}
+
+/* Enlace contenedor del logotipo */
+
+.logo-link {
+
+display: flex; /* Evita espacios inferiores invisibles alrededor de la imagen */
+
+align-items: center; /* Centra verticalmente el logotipo */
+
+}
+
+/* Tamaño controlado del logotipo de Kamada */
+
+.logo-img {
+
+height: 58px; /* Altura proporcionada dentro de la barra de 82px */
+
+width: auto; /* Ajusta el ancho automáticamente sin deformar el logo */
+
+object-fit: contain; /* Muestra el logotipo completo sin recortarlo */
+
+}
+
+/* Contenedor de los enlaces de navegación */
+
+.nav-links {
+
+display: flex; /* Alinea los enlaces en una sola fila */
+
+align-items: center; /* Centra enlaces y botón verticalmente */
+
+gap: 24px; /* Separación uniforme entre cada opción del menú */
+
+}
+
+/* Apariencia de cada enlace del menú superior */
+
+.nav-links a {
+
+text-decoration: none; /* Quita el subrayado tradicional de los enlaces */
+
+color: var(--navy); /* Usa el azul marino corporativo */
+
+font-weight: 600; /* Grosor seminegrita para buena presencia */
+
+font-size: 0.95rem; /* Tamaño equilibrado */
+
+transition: color 0.2s ease; /* Suaviza el cambio de color al pasar el mouse */
+
+}
+
+/* Efecto visual al pasar el cursor por los enlaces del menú */
+
+.nav-links a:hover {
+
+color: var(--ocean); /* Aclara el azul para confirmar interactividad */
+
+}
+
+/* Botón destacado Cotizar dentro de la barra de navegación */
+
+.btn-nav {
+
+background-color: var(--navy); /* Fondo azul marino sólido */
+
+color: var(--white) !important; /* Fuerza el texto en blanco para máximo contraste */
+
+padding: 10px 20px; /* Relleno cómodo para clic o toque táctil */
+
+border-radius: 6px; /* Esquinas suavemente redondeadas */
+
+}
+
+/* Cambio sutil del botón Cotizar al pasar el cursor */
+
+.btn-nav:hover {
+
+background-color: var(--ocean); /* Pasa a azul océano */
+
+}
+
+/* Sección 1: Portada principal con fondo degradado marino */
+
+.hero {
+
+background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%); /* Degradado diagonal en tonos marinos */
+
+color: var(--white); /* Texto en blanco sobre fondo oscuro */
+
+padding: 96px 0; /* Espaciado amplio arriba y abajo para dar impacto visual */
+
+}
+
+/* Limita el ancho del bloque textual de la portada */
+
+.hero-text {
+
+max-width: 700px; /* Evita líneas muy largas que cansan la vista */
+
+}
+
+/* Etiqueta superior tipo píldora en la portada */
+
+.badge {
+
+display: inline-block; /* Permite aplicar relleno ajustándose solo al ancho del texto */
+
+background-color: rgba(217, 155, 38, 0.22); /* Fondo dorado translúcido */
+
+color: #fcd34d; /* Texto dorado claro muy legible */
+
+padding: 6px 14px; /* Relleno interno compacto */
+
+border-radius: 20px; /* Bordes completamente curvos */
+
+font-size: 0.85rem; /* Tamaño discreto */
+
+font-weight: 600; /* Seminegrita */
+
+margin-bottom: 18px; /* Espacio inferior antes del titular H1 */
+
+}
+
+/* Titular principal H1 de la página */
+
+.hero h1 {
+
+font-size: 2.6rem; /* Tamaño protagonista */
+
+line-height: 1.2; /* Interlineado cerrado propio de títulos grandes */
+
+margin-bottom: 18px; /* Separación respecto al párrafo descriptivo */
+
+}
+
+/* Párrafo de propuesta de valor en la portada */
+
+.hero p {
+
+font-size: 1.1rem; /* Tamaño ligeramente superior al texto normal */
+
+color: #e2e8f0; /* Blanco suave para lectura cómoda */
+
+margin-bottom: 30px; /* Espacio antes de los botones de acción */
+
+}
+
+/* Contenedor de los botones de la portada */
+
+.hero-actions {
+
+display: flex; /* Coloca ambos botones en fila */
+
+gap: 16px; /* Separación entre los dos botones */
+
+flex-wrap: wrap; /* Permite que el segundo botón baje en pantallas pequeñas */
+
+}
+
+/* Botón principal dorado reutilizable en portada, banner y formulario */
+
+.btn-primary {
+
+display: inline-block; /* Permite medidas y rellenos tanto en enlaces como en botones */
+
+background-color: var(--gold); /* Fondo dorado corporativo */
+
+color: var(--navy); /* Letras azul marino de alto contraste */
+
+font-weight: 700; /* Negrita para destacar el llamado a la acción */
+
+padding: 14px 26px; /* Tamaño amplio y fácil de tocar en celular */
+
+border-radius: 6px; /* Esquinas redondeadas */
+
+text-decoration: none; /* Sin subrayado */
+
+border: none; /* Elimina bordes grises predeterminados de los botones HTML */
+
+cursor: pointer; /* Muestra el puntero de mano al pasar el mouse */
+
+font-size: 1rem; /* Tamaño estándar legible */
+
+transition: background-color 0.2s ease; /* Transición suave al interactuar */
+
+}
+
+/* Efecto hover del botón principal */
+
+.btn-primary:hover {
+
+background-color: var(--gold-hover); /* Ilumina el dorado al pasar el cursor */
+
+}
+
+/* Botón secundario transparente con borde blanco en la portada */
+
+.btn-secondary {
+
+display: inline-block; /* Comportamiento de bloque en línea */
+
+border: 2px solid var(--white); /* Marco blanco nítido */
+
+color: var(--white); /* Texto blanco */
+
+font-weight: 600; /* Seminegrita */
+
+padding: 12px 24px; /* Relleno ajustado para igualar la altura del botón principal */
+
+border-radius: 6px; /* Mismas esquinas redondeadas */
+
+text-decoration: none; /* Sin subrayado */
+
+transition: background-color 0.2s ease, color 0.2s ease; /* Suaviza el efecto hover */
+
+}
+
+/* Efecto hover del botón secundario */
+
+.btn-secondary:hover {
+
+background-color: var(--white); /* Rellena el botón de blanco */
+
+color: var(--navy); /* Cambia las letras a azul marino */
+
+}
+
+/* Clase auxiliar para estirar el botón de envío al ancho completo del formulario */
+
+.full-width {
+
+width: 100%; /* Ocupa el 100% del contenedor padre */
+
+}
+
+/* Espaciado vertical estándar para todas las secciones internas */
+
+.section {
+
+padding: 76px 0; /* Da respiración visual arriba y abajo */
+
+}
+
+/* Fondo claro alterno para separar visualmente las secciones */
+
+.bg-light {
+
+background-color: var(--light-bg); /* Aplica el gris azulado suave */
+
+}
+
+/* Bloque de título y subtítulo centrado en cada sección */
+
+.section-header {
+
+text-align: center; /* Centra los textos */
+
+max-width: 720px; /* Mantiene un ancho de lectura limpio */
+
+margin: 0 auto 48px auto; /* Centra el bloque y agrega margen inferior */
+
+}
+
+/* Títulos H2 de cada sección */
+
+.section-header h2 {
+
+font-size: 2rem; /* Jerarquía clara debajo del H1 */
+
+color: var(--navy); /* Azul marino */
+
+margin-bottom: 12px; /* Separación con el subtítulo */
+
+}
+
+/* Subtítulos de apoyo en encabezados de sección */
+
+.section-header p {
+
+color: var(--text-muted); /* Gris intermedio */
+
+}
+
+/* Cuadrícula adaptable para pilares industriales y tarjetas del catálogo */
+
+.pillars-grid,
+
+.products-grid {
+
+display: grid; /* Activa el sistema de rejilla CSS Grid */
+
+grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Muestra 3 columnas en PC y se apila automáticamente en móvil */
+
+gap: 24px; /* Espacio uniforme entre tarjetas */
+
+}
+
+/* Tarjetas de ventajas operativas en la sección Nosotros */
+
+.pillar-card {
+
+background-color: var(--white); /* Fondo blanco limpio */
+
+padding: 28px; /* Espacio interior cómodo */
+
+border-radius: 8px; /* Esquinas suavizadas */
+
+border: 1px solid var(--border-gray); /* Borde fino corporativo */
+
+}
+
+/* Subtítulo dentro de cada tarjeta de pilar */
+
+.pillar-card h3 {
+
+color: var(--ocean); /* Azul océano */
+
+margin-bottom: 10px; /* Espacio antes de la descripción */
+
+}
+
+/* Título separador para distinguir Misión Mar y Marguajira */
+
+.brand-title {
+
+font-size: 1.5rem; /* Tamaño destacado */
+
+color: var(--navy); /* Azul marino */
+
+border-left: 4px solid var(--gold); /* Barra vertical dorada decorativa a la izquierda */
+
+padding-left: 14px; /* Separación entre la barra dorada y el texto */
+
+margin-bottom: 24px; /* Espacio respecto a la fila de productos */
+
+}
+
+/* Separación adicional entre el bloque de Misión Mar y el de Marguajira */
+
+.mt-space {
+
+margin-top: 52px; /* Aire suficiente para diferenciar ambas líneas */
+
+}
+
+/* Tarjeta individual de cada conserva en el catálogo */
+
+.product-card {
+
+background-color: var(--white); /* Fondo blanco */
+
+border-radius: 10px; /* Esquinas redondeadas */
+
+overflow: hidden; /* Recorta las esquinas superiores de la foto siguiendo el radio de la tarjeta */
+
+border: 1px solid var(--border-gray); /* Borde limpio */
+
+display: flex; /* Permite organizar foto arriba y descripción abajo */
+
+flex-direction: column; /* Dirección vertical */
+
+}
+
+/* Fotografía de cada producto */
+
+.product-img {
+
+width: 100%; /* Cubre todo el ancho de la tarjeta */
+
+height: 220px; /* Altura fija para que todas las tarjetas queden perfectamente alineadas */
+
+object-fit: cover; /* Rellena el recuadro manteniendo la proporción real de la foto */
+
+background-color: var(--border-gray); /* Fondo gris visible si aún falta cargar una foto */
+
+}
+
+/* Contenedor de texto dentro de la tarjeta de producto */
+
+.product-body {
+
+padding: 20px; /* Margen interior alrededor del texto */
+
+}
+
+/* Etiqueta azul para identificar la marca Misión Mar */
+
+.brand-tag {
+
+display: inline-block; /* Se ajusta al tamaño del texto */
+
+background-color: var(--ocean); /* Fondo azul océano */
+
+color: var(--white); /* Letras blancas */
+
+font-size: 0.75rem; /* Tamaño compacto de etiqueta */
+
+font-weight: 700; /* Negrita */
+
+padding: 4px 10px; /* Relleno pequeño */
+
+border-radius: 4px; /* Bordes ligeramente curvos */
+
+margin-bottom: 10px; /* Separación con el título del producto */
+
+text-transform: uppercase; /* Muestra el nombre de marca en mayúsculas */
+
+}
+
+/* Variante dorada de la etiqueta para identificar Marguajira */
+
+.brand-tag.gold {
+
+background-color: var(--gold); /* Fondo dorado */
+
+color: var(--navy); /* Letras en azul marino para mejor lectura */
+
+}
+
+/* Nombre comercial del producto */
+
+.product-body h4 {
+
+font-size: 1.15rem; /* Tamaño claro y jerarquizado */
+
+color: var(--navy); /* Azul marino */
+
+margin-bottom: 8px; /* Espacio antes del gramaje y bulto */
+
+}
+
+/* Descripción de presentación y bulto */
+
+.product-body p {
+
+font-size: 0.92rem; /* Letra ligeramente más compacta */
+
+color: var(--text-muted); /* Gris intermedio */
+
+}
+
+/* Sección 4: Franja intermedia oscura orientada a mayoristas B2B */
+
+.b2b-banner {
+
+background-color: var(--navy); /* Fondo oscuro para romper el ritmo visual y captar atención */
+
+color: var(--white); /* Texto blanco */
+
+padding: 58px 0; /* Altura intermedia */
+
+}
+
+/* Acomodo horizontal del texto B2B y su botón de contacto */
+
+.b2b-content {
+
+display: flex; /* Coloca texto y botón en línea */
+
+justify-content: space-between; /* Separa ambos bloques a los extremos */
+
+align-items: center; /* Centra verticalmente el botón con el texto */
+
+gap: 24px; /* Espacio mínimo cuando bajan a dos filas en móvil */
+
+flex-wrap: wrap; /* Adaptable a cualquier ancho de pantalla */
+
+}
+
+/* Título de la franja B2B */
+
+.b2b-content h2 {
+
+font-size: 1.8rem; /* Tamaño fuerte */
+
+margin-bottom: 8px; /* Espacio inferior */
+
+}
+
+/* Párrafo explicativo de la franja B2B */
+
+.b2b-content p {
+
+color: #cbd5e1; /* Gris claro legible sobre azul marino */
+
+max-width: 620px; /* Evita que choque con el botón */
+
+}
+
+/* Sección 5: Cuadrícula de dos columnas para datos comerciales y formulario */
+
+.contact-grid {
+
+display: grid; /* Diseño en columnas flexibles */
+
+grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); /* Dos columnas en escritorio y una sola en teléfono */
+
+gap: 40px; /* Separación cómoda entre información y formulario */
+
+align-items: start; /* Alinea ambas columnas desde la parte superior */
+
+}
+
+/* Título de la columna de contacto */
+
+.contact-info h2 {
+
+font-size: 2rem; /* Mismo tamaño que los demás encabezados H2 */
+
+color: var(--navy); /* Azul marino */
+
+margin-bottom: 12px; /* Separación inferior */
+
+}
+
+/* Lista de correo, planta y marcas */
+
+.contact-list {
+
+list-style: none; /* Elimina los puntos negros predeterminados de las listas HTML */
+
+margin-top: 24px; /* Separa la lista del párrafo introductorio */
+
+display: flex; /* Permite controlar el espacio entre elementos */
+
+flex-direction: column; /* Apila cada dato en su propia línea */
+
+gap: 12px; /* Separación uniforme entre filas */
+
+}
+
+/* Recuadro blanco del formulario de cotización */
+
+.contact-form {
+
+background-color: var(--white); /* Fondo blanco que destaca sobre la sección gris clara */
+
+padding: 28px; /* Relleno interior generoso */
+
+border-radius: 10px; /* Esquinas redondeadas */
+
+border: 1px solid var(--border-gray); /* Borde sutil */
+
+display: flex; /* Organiza etiquetas, campos y botón en columna */
+
+flex-direction: column; /* Dirección vertical */
+
+gap: 12px; /* Espacio uniforme entre cada campo */
+
+}
+
+/* Etiquetas descriptivas encima de cada casilla del formulario */
+
+.contact-form label {
+
+font-weight: 600; /* Seminegrita para identificar rápido cada campo */
+
+font-size: 0.9rem; /* Tamaño limpio */
+
+color: var(--navy); /* Azul marino */
+
+}
+
+/* Campos de texto y cuadro de pedido del formulario */
+
+.contact-form input,
+
+.contact-form textarea {
+
+width: 100%; /* Ocupan todo el ancho interior del formulario */
+
+padding: 12px; /* Espacio cómodo para escribir */
+
+border: 1px solid #cbd5e1; /* Borde gris visible */
+
+border-radius: 6px; /* Esquinas suaves */
+
+font-family: inherit; /* Hereda la misma fuente del sitio */
+
+font-size: 0.95rem; /* Tamaño cómodo al escribir en celular o PC */
+
+}
+
+/* Resaltado del campo cuando el usuario hace clic para escribir */
+
+.contact-form input:focus,
+
+.contact-form textarea:focus {
+
+outline: none; /* Quita el borde negro grueso por defecto */
+
+border-color: var(--ocean); /* Ilumina el borde con el azul océano corporativo */
+
+}
+
+/* Pie de página final */
+
+.footer {
+
+background-color: #071930; /* Azul marino más profundo para cerrar el sitio */
+
+color: #94a3b8; /* Texto gris azulado sobrio */
+
+padding: 28px 0; /* Altura compacta */
+
+font-size: 0.9rem; /* Letra discreta */
+
+}
+
+/* Distribución del contenido dentro del pie de página */
+
+.footer-content {
+
+display: flex; /* Alinea derechos y correo en fila */
+
+justify-content: space-between; /* Uno a la izquierda y otro a la derecha */
+
+flex-wrap: wrap; /* En teléfono baja a dos líneas ordenadas */
+
+gap: 12px; /* Espacio entre líneas si se apilan */
+
+}
+
+/* Enlace del correo ventas@kamada.com.ve en el pie de página */
+
+.footer a {
+
+color: #fcd34d; /* Dorado claro visible sobre fondo oscuro */
+
+text-decoration: none; /* Sin subrayado */
+
+}
+
+/* Reglas adaptables exclusivas para teléfonos móviles (pantallas menores a 680px) */
+
+@media (max-width: 680px) {
+
+.nav-links a:not(.btn-nav) {
+
+display: none; /* Oculta los enlaces secundarios en móvil y deja visible el botón Cotizar */
+
+}
+
+.hero h1 {
+
+font-size: 1.9rem; /* Reduce el titular principal para evitar saltos bruscos en pantallas angostas */
+
+}
+
+}
