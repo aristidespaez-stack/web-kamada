@@ -1,741 +1,571 @@
-/* Reinicio global para que todos los navegadores partan de las mismas medidas */
-
+/* Reinicio global para eliminar márgenes y rellenos predeterminados del navegador */
 * {
-
-box-sizing: border-box; /* Incluye borde y relleno dentro del ancho y alto total de cada caja */
-
-margin: 0; /* Elimina márgenes externos que ponen los navegadores por defecto */
-
-padding: 0; /* Elimina rellenos internos por defecto */
-
+  box-sizing: border-box; /* Incluye bordes y rellenos dentro del ancho y alto total */
+  margin: 0; /* Elimina márgenes externos por defecto */
+  padding: 0; /* Elimina rellenos internos por defecto */
 }
 
-/* Variables de colores corporativos para modificar toda la paleta desde un solo bloque */
-
+/* Variables de colores corporativos para mantener coherencia visual en todo el sitio */
 :root {
-
---navy: #0b2545; /* Azul marino profundo principal de Kamada */
-
---ocean: #134074; /* Azul océano secundario para degradados y acentos */
-
---gold: #d99b26; /* Dorado principal para botones de conversión y etiquetas */
-
---gold-hover: #eab308; /* Dorado más luminoso cuando el usuario pasa el cursor */
-
---light-bg: #f4f7fa; /* Fondo gris azulado suave para alternar secciones */
-
---border-gray: #e2e8f0; /* Gris claro para bordes sutiles en tarjetas */
-
---text-dark: #1e293b; /* Color principal de lectura con buen contraste */
-
---text-muted: #475569; /* Gris intermedio para descripciones secundarias */
-
---white: #ffffff; /* Blanco puro para fondos y textos sobre zonas oscuras */
-
+  --navy-deep: #071930; /* Azul marino profundo para cierres y degradados */
+  --navy: #0b2545; /* Azul marino corporativo principal de Kamada */
+  --ocean: #134074; /* Azul océano secundario */
+  --gold: #d99b26; /* Dorado corporativo para botones y etiquetas */
+  --gold-hover: #eab308; /* Dorado luminoso al pasar el cursor */
+  --light-bg: #f4f7fa; /* Fondo gris azulado suave para secciones claras */
+  --border-gray: #e2e8f0; /* Borde gris sutil para tarjetas y divisiones */
+  --text-dark: #1e293b; /* Color principal de lectura */
+  --text-muted: #475569; /* Color secundario para descripciones */
+  --white: #ffffff; /* Blanco puro */
 }
 
-/* Configuración base de desplazamiento y tipografía en toda la web */
-
+/* Configuración general de tipografía y desplazamiento suave */
 html {
-
-scroll-behavior: smooth; /* Hace que al tocar un enlace del menú baje suavemente */
-
-font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Tipografía limpia nativa que carga al instante */
-
-color: var(--text-dark); /* Aplica el color oscuro principal a todo el texto */
-
-line-height: 1.6; /* Da espacio cómodo entre líneas para facilitar la lectura */
-
+  scroll-behavior: smooth; /* Desplazamiento animado al hacer clic en los enlaces del menú */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuente moderna y rápida sin descargas externas */
+  color: var(--text-dark); /* Color base del texto */
+  line-height: 1.6; /* Espaciado cómodo entre líneas */
 }
 
-/* Contenedor reutilizable que centra el contenido y evita que se estire demasiado en monitores grandes */
-
+/* Contenedor principal centrado con ancho máximo profesional */
 .container {
-
-max-width: 1140px; /* Ancho máximo profesional en escritorio */
-
-margin: 0 auto; /* Centra el bloque horizontalmente en la pantalla */
-
-padding: 0 20px; /* Deja margen lateral de seguridad en teléfonos y tabletas */
-
+  max-width: 1140px; /* Limita el ancho en pantallas grandes */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 0 20px; /* Margen lateral seguro en teléfonos y tabletas */
 }
 
-/* Barra de navegación superior fija */
-
+/* Barra superior de navegación fija */
 .navbar {
-
-background-color: var(--white); /* Fondo blanco limpio */
-
-border-bottom: 1px solid var(--border-gray); /* Línea fina que separa el menú del contenido */
-
-position: sticky; /* Mantiene la barra visible mientras el usuario baja por la página */
-
-top: 0; /* La fija exactamente al borde superior */
-
-z-index: 100; /* Garantiza que siempre quede por encima de imágenes y tarjetas */
-
+  background-color: rgba(255, 255, 255, 0.96); /* Fondo blanco casi sólido */
+  backdrop-filter: blur(8px); /* Suaviza lo que pasa por detrás al hacer scroll */
+  border-bottom: 1px solid var(--border-gray); /* Línea sutil separadora */
+  position: sticky; /* Mantiene la barra visible en la parte superior */
+  top: 0; /* Pegada al borde superior */
+  z-index: 100; /* Siempre por encima de las demás secciones */
 }
 
-/* Organización interna de la barra superior (logo a la izquierda, enlaces a la derecha) */
-
+/* Distribución interna de la barra superior */
 .nav-content {
-
-display: flex; /* Coloca los elementos en fila horizontal */
-
-justify-content: space-between; /* Envía el logo al extremo izquierdo y el menú al derecho */
-
-align-items: center; /* Centra ambos verticalmente */
-
-height: 82px; /* Altura fija y equilibrada para el encabezado */
-
+  display: flex; /* Coloca logo y enlaces en la misma fila */
+  justify-content: space-between; /* Logo a la izquierda y menú a la derecha */
+  align-items: center; /* Centra verticalmente */
+  height: 86px; /* Altura equilibrada para que el logo luzca limpio */
 }
 
 /* Enlace contenedor del logotipo */
-
 .logo-link {
-
-display: flex; /* Evita espacios inferiores invisibles alrededor de la imagen */
-
-align-items: center; /* Centra verticalmente el logotipo */
-
+  display: flex; /* Elimina espacios fantasma debajo de la imagen */
+  align-items: center; /* Centra el logo verticalmente */
 }
 
-/* Tamaño controlado del logotipo de Kamada */
-
+/* Tamaño del logotipo corporativo */
 .logo-img {
-
-height: 58px; /* Altura proporcionada dentro de la barra de 82px */
-
-width: auto; /* Ajusta el ancho automáticamente sin deformar el logo */
-
-object-fit: contain; /* Muestra el logotipo completo sin recortarlo */
-
+  height: 64px; /* Altura destacada y nítida */
+  width: auto; /* Conserva la proporción original sin deformar */
+  object-fit: contain; /* Muestra el logo completo */
 }
 
-/* Contenedor de los enlaces de navegación */
-
+/* Grupo de enlaces del menú */
 .nav-links {
-
-display: flex; /* Alinea los enlaces en una sola fila */
-
-align-items: center; /* Centra enlaces y botón verticalmente */
-
-gap: 24px; /* Separación uniforme entre cada opción del menú */
-
+  display: flex; /* Alinea enlaces en fila */
+  align-items: center; /* Centra verticalmente */
+  gap: 24px; /* Separación uniforme entre cada opción */
 }
 
-/* Apariencia de cada enlace del menú superior */
-
+/* Estilo de cada enlace de navegación */
 .nav-links a {
-
-text-decoration: none; /* Quita el subrayado tradicional de los enlaces */
-
-color: var(--navy); /* Usa el azul marino corporativo */
-
-font-weight: 600; /* Grosor seminegrita para buena presencia */
-
-font-size: 0.95rem; /* Tamaño equilibrado */
-
-transition: color 0.2s ease; /* Suaviza el cambio de color al pasar el mouse */
-
+  text-decoration: none; /* Sin subrayado */
+  color: var(--navy); /* Azul marino corporativo */
+  font-weight: 600; /* Seminegrita */
+  font-size: 0.95rem; /* Tamaño cómodo */
+  transition: color 0.2s ease; /* Cambio suave de color */
 }
 
-/* Efecto visual al pasar el cursor por los enlaces del menú */
-
+/* Efecto al pasar el mouse sobre los enlaces */
 .nav-links a:hover {
-
-color: var(--ocean); /* Aclara el azul para confirmar interactividad */
-
+  color: var(--ocean); /* Aclara el azul */
 }
 
-/* Botón destacado Cotizar dentro de la barra de navegación */
-
+/* Botón destacado Cotizar en la barra superior */
 .btn-nav {
-
-background-color: var(--navy); /* Fondo azul marino sólido */
-
-color: var(--white) !important; /* Fuerza el texto en blanco para máximo contraste */
-
-padding: 10px 20px; /* Relleno cómodo para clic o toque táctil */
-
-border-radius: 6px; /* Esquinas suavemente redondeadas */
-
+  background-color: var(--navy); /* Fondo azul marino */
+  color: var(--white) !important; /* Letras blancas de alto contraste */
+  padding: 10px 22px; /* Relleno cómodo */
+  border-radius: 6px; /* Bordes suavemente redondeados */
 }
 
-/* Cambio sutil del botón Cotizar al pasar el cursor */
-
+/* Efecto hover del botón Cotizar */
 .btn-nav:hover {
-
-background-color: var(--ocean); /* Pasa a azul océano */
-
+  background-color: var(--ocean); /* Cambia a azul océano */
 }
 
-/* Sección 1: Portada principal con fondo degradado marino */
-
+/* Sección 1: Portada principal con fondo del mar difuminado y degradado */
 .hero {
-
-background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%); /* Degradado diagonal en tonos marinos */
-
-color: var(--white); /* Texto en blanco sobre fondo oscuro */
-
-padding: 96px 0; /* Espaciado amplio arriba y abajo para dar impacto visual */
-
+  position: relative; /* Permite superponer las capas de fondo, degradado y ola */
+  overflow: hidden; /* Recorta cualquier borde sobrante del desenfoque */
+  color: var(--white); /* Texto principal en blanco */
+  padding: 110px 0 135px 0; /* Espacio inferior extra para que la ola no tape los botones */
+  background-color: var(--navy-deep); /* Color de respaldo mientras carga img/mar.png */
 }
 
-/* Limita el ancho del bloque textual de la portada */
+/* Capa de imagen del mar con efecto difuminado suave (blurred/brushed) */
+.hero-bg {
+  position: absolute; /* Se posiciona detrás del contenido */
+  inset: 0; /* Cubre todo el alto y ancho de la portada */
+  background-image: url("img/mar.png"); /* Carga tu foto del mar desde la carpeta img/ */
+  background-size: cover; /* Cubre toda la sección sin dejar espacios vacíos */
+  background-position: center; /* Centra la composición del mar */
+  filter: blur(5px) saturate(1.1); /* Aplica el efecto suavizado/brushed realzando los tonos azules */
+  transform: scale(1.08); /* Amplía ligeramente la foto para ocultar bordes blancos del blur */
+  z-index: 1; /* Capa más profunda */
+}
 
+/* Capa de degradado marino translúcido sobre la foto del mar */
+.hero-overlay {
+  position: absolute; /* Se coloca encima de la foto y debajo del texto */
+  inset: 0; /* Cubre toda la portada */
+  background: linear-gradient(125deg, rgba(7, 25, 48, 0.88) 0%, rgba(11, 37, 69, 0.72) 55%, rgba(19, 64, 116, 0.56) 100%); /* Más oscuro a la izquierda para leer perfecto y más transparente a la derecha para lucir el mar */
+  z-index: 2; /* Capa intermedia */
+}
+
+/* Contenedor de texto de la portada por encima de las capas de fondo */
+.hero-inner {
+  position: relative; /* Activa el apilamiento por z-index */
+  z-index: 3; /* Garantiza que texto y botones se vean 100% nítidos */
+}
+
+/* Limita el ancho del texto en la portada */
 .hero-text {
-
-max-width: 700px; /* Evita líneas muy largas que cansan la vista */
-
+  max-width: 700px; /* Evita líneas demasiado largas */
 }
 
-/* Etiqueta superior tipo píldora en la portada */
-
+/* Etiqueta superior estilo píldora */
 .badge {
-
-display: inline-block; /* Permite aplicar relleno ajustándose solo al ancho del texto */
-
-background-color: rgba(217, 155, 38, 0.22); /* Fondo dorado translúcido */
-
-color: #fcd34d; /* Texto dorado claro muy legible */
-
-padding: 6px 14px; /* Relleno interno compacto */
-
-border-radius: 20px; /* Bordes completamente curvos */
-
-font-size: 0.85rem; /* Tamaño discreto */
-
-font-weight: 600; /* Seminegrita */
-
-margin-bottom: 18px; /* Espacio inferior antes del titular H1 */
-
+  display: inline-block; /* Ajusta el ancho al contenido del texto */
+  background-color: rgba(217, 155, 38, 0.22); /* Fondo dorado translúcido */
+  border: 1px solid rgba(252, 211, 77, 0.35); /* Borde dorado sutil */
+  color: #fcd34d; /* Texto dorado claro */
+  padding: 6px 15px; /* Relleno interno */
+  border-radius: 20px; /* Forma redondeada */
+  font-size: 0.85rem; /* Tamaño compacto */
+  font-weight: 600; /* Seminegrita */
+  margin-bottom: 18px; /* Espacio antes del título */
 }
 
-/* Titular principal H1 de la página */
-
+/* Titular principal H1 */
 .hero h1 {
-
-font-size: 2.6rem; /* Tamaño protagonista */
-
-line-height: 1.2; /* Interlineado cerrado propio de títulos grandes */
-
-margin-bottom: 18px; /* Separación respecto al párrafo descriptivo */
-
+  font-size: 2.75rem; /* Gran presencia visual */
+  line-height: 1.18; /* Interlineado compacto */
+  margin-bottom: 20px; /* Separación con el párrafo */
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); /* Sombra suave para despegar el texto del fondo marino */
 }
 
-/* Párrafo de propuesta de valor en la portada */
-
+/* Párrafo principal de la portada */
 .hero p {
-
-font-size: 1.1rem; /* Tamaño ligeramente superior al texto normal */
-
-color: #e2e8f0; /* Blanco suave para lectura cómoda */
-
-margin-bottom: 30px; /* Espacio antes de los botones de acción */
-
+  font-size: 1.12rem; /* Tamaño cómodo */
+  color: #e2e8f0; /* Blanco suave */
+  margin-bottom: 32px; /* Espacio antes de los botones */
 }
 
-/* Contenedor de los botones de la portada */
-
+/* Contenedor horizontal de botones en la portada */
 .hero-actions {
-
-display: flex; /* Coloca ambos botones en fila */
-
-gap: 16px; /* Separación entre los dos botones */
-
-flex-wrap: wrap; /* Permite que el segundo botón baje en pantallas pequeñas */
-
+  display: flex; /* Botones en línea */
+  gap: 16px; /* Separación entre ambos */
+  flex-wrap: wrap; /* Baja a dos líneas en pantallas muy angostas */
 }
 
-/* Botón principal dorado reutilizable en portada, banner y formulario */
+/* Curva vectorial de ola al pie de la portada */
+.hero-wave {
+  position: absolute; /* Se ancla en la base de la portada */
+  bottom: -1px; /* Evita cualquier línea fina de separación con la siguiente sección */
+  left: 0; /* Empieza desde el borde izquierdo */
+  width: 100%; /* Abarca todo el ancho de pantalla */
+  line-height: 0; /* Elimina espacios verticales extra en el SVG */
+  z-index: 3; /* Queda por encima del degradado marino */
+}
 
+/* Dimensiones del gráfico SVG de la ola */
+.hero-wave svg {
+  display: block; /* Comportamiento de bloque limpio */
+  width: 100%; /* Ancho completo */
+  height: 70px; /* Altura elegante de la ola */
+}
+
+/* Color de relleno de la ola igualado al fondo de la sección Nosotros */
+.hero-wave svg path {
+  fill: var(--light-bg); /* Une visualmente el mar con la sección siguiente */
+}
+
+/* Botón principal dorado */
 .btn-primary {
-
-display: inline-block; /* Permite medidas y rellenos tanto en enlaces como en botones */
-
-background-color: var(--gold); /* Fondo dorado corporativo */
-
-color: var(--navy); /* Letras azul marino de alto contraste */
-
-font-weight: 700; /* Negrita para destacar el llamado a la acción */
-
-padding: 14px 26px; /* Tamaño amplio y fácil de tocar en celular */
-
-border-radius: 6px; /* Esquinas redondeadas */
-
-text-decoration: none; /* Sin subrayado */
-
-border: none; /* Elimina bordes grises predeterminados de los botones HTML */
-
-cursor: pointer; /* Muestra el puntero de mano al pasar el mouse */
-
-font-size: 1rem; /* Tamaño estándar legible */
-
-transition: background-color 0.2s ease; /* Transición suave al interactuar */
-
+  display: inline-block; /* Permite padding y medidas exactas */
+  background-color: var(--gold); /* Dorado corporativo */
+  color: var(--navy); /* Contraste máximo en azul marino */
+  font-weight: 700; /* Negrita */
+  padding: 14px 28px; /* Tamaño generoso */
+  border-radius: 6px; /* Esquinas redondeadas */
+  text-decoration: none; /* Sin subrayado */
+  border: none; /* Sin borde predeterminado */
+  cursor: pointer; /* Manito interactiva */
+  font-size: 1rem; /* Tamaño estándar */
+  transition: background-color 0.2s ease, transform 0.15s ease; /* Animación suave al pasar el cursor */
 }
 
-/* Efecto hover del botón principal */
-
+/* Efecto hover del botón dorado */
 .btn-primary:hover {
-
-background-color: var(--gold-hover); /* Ilumina el dorado al pasar el cursor */
-
+  background-color: var(--gold-hover); /* Tono más brillante */
+  transform: translateY(-2px); /* Ligera elevación visual */
 }
 
-/* Botón secundario transparente con borde blanco en la portada */
-
+/* Botón secundario transparente con marco blanco */
 .btn-secondary {
-
-display: inline-block; /* Comportamiento de bloque en línea */
-
-border: 2px solid var(--white); /* Marco blanco nítido */
-
-color: var(--white); /* Texto blanco */
-
-font-weight: 600; /* Seminegrita */
-
-padding: 12px 24px; /* Relleno ajustado para igualar la altura del botón principal */
-
-border-radius: 6px; /* Mismas esquinas redondeadas */
-
-text-decoration: none; /* Sin subrayado */
-
-transition: background-color 0.2s ease, color 0.2s ease; /* Suaviza el efecto hover */
-
+  display: inline-block; /* Comportamiento en línea */
+  border: 2px solid var(--white); /* Borde blanco limpio */
+  color: var(--white); /* Texto blanco */
+  font-weight: 600; /* Seminegrita */
+  padding: 12px 26px; /* Compensa los 2px del borde */
+  border-radius: 6px; /* Esquinas redondeadas */
+  text-decoration: none; /* Sin subrayado */
+  background-color: rgba(255, 255, 255, 0.08); /* Ligero toque traslúcido sobre el mar */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Suaviza el cambio */
 }
 
 /* Efecto hover del botón secundario */
-
 .btn-secondary:hover {
-
-background-color: var(--white); /* Rellena el botón de blanco */
-
-color: var(--navy); /* Cambia las letras a azul marino */
-
+  background-color: var(--white); /* Fondo blanco sólido */
+  color: var(--navy); /* Texto azul marino */
 }
 
-/* Clase auxiliar para estirar el botón de envío al ancho completo del formulario */
-
+/* Utilidad para botones a ancho completo */
 .full-width {
-
-width: 100%; /* Ocupa el 100% del contenedor padre */
-
+  width: 100%; /* Estira el botón en todo el formulario */
 }
 
-/* Espaciado vertical estándar para todas las secciones internas */
-
+/* Espaciado vertical estándar de las secciones */
 .section {
-
-padding: 76px 0; /* Da respiración visual arriba y abajo */
-
+  padding: 78px 0; /* Aire visual arriba y abajo */
 }
 
-/* Fondo claro alterno para separar visualmente las secciones */
-
+/* Fondo claro alterno */
 .bg-light {
-
-background-color: var(--light-bg); /* Aplica el gris azulado suave */
-
+  background-color: var(--light-bg); /* Gris azulado muy suave */
 }
 
-/* Bloque de título y subtítulo centrado en cada sección */
-
+/* Encabezado centrado de sección */
 .section-header {
-
-text-align: center; /* Centra los textos */
-
-max-width: 720px; /* Mantiene un ancho de lectura limpio */
-
-margin: 0 auto 48px auto; /* Centra el bloque y agrega margen inferior */
-
+  text-align: center; /* Centra título y subtítulo */
+  max-width: 740px; /* Ancho de lectura equilibrado */
+  margin: 0 auto 48px auto; /* Centrado con margen inferior */
 }
 
-/* Títulos H2 de cada sección */
-
+/* Títulos H2 de sección */
 .section-header h2 {
-
-font-size: 2rem; /* Jerarquía clara debajo del H1 */
-
-color: var(--navy); /* Azul marino */
-
-margin-bottom: 12px; /* Separación con el subtítulo */
-
+  font-size: 2.05rem; /* Jerarquía clara */
+  color: var(--navy); /* Azul marino */
+  margin-bottom: 12px; /* Separación del subtítulo */
 }
 
-/* Subtítulos de apoyo en encabezados de sección */
-
+/* Subtítulos de sección */
 .section-header p {
-
-color: var(--text-muted); /* Gris intermedio */
-
+  color: var(--text-muted); /* Gris intermedio */
 }
 
-/* Cuadrícula adaptable para pilares industriales y tarjetas del catálogo */
+/* Encabezado adaptado a texto blanco para la sección Co-Packing */
+.light-header h2 {
+  color: var(--white); /* Título en blanco puro */
+}
 
+.light-header p {
+  color: #e2e8f0; /* Descripción en blanco suave */
+}
+
+/* Cuadrícula automática de 3 columnas para pilares y productos */
 .pillars-grid,
-
-.products-grid {
-
-display: grid; /* Activa el sistema de rejilla CSS Grid */
-
-grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Muestra 3 columnas en PC y se apila automáticamente en móvil */
-
-gap: 24px; /* Espacio uniforme entre tarjetas */
-
+.products-grid,
+.copacking-grid {
+  display: grid; /* Activa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* 3 columnas en escritorio y apilado automático en móvil */
+  gap: 26px; /* Separación uniforme entre tarjetas */
 }
 
-/* Tarjetas de ventajas operativas en la sección Nosotros */
+/* Ajuste especial cuando una marca tiene 1 solo producto para que no se estire a todo lo ancho */
+.products-grid.single-col {
+  grid-template-columns: minmax(290px, 380px); /* Mantiene el mismo ancho visual que las tarjetas de Marguajira */
+  justify-content: start; /* Alinea la tarjeta al inicio izquierdo bajo su título */
+}
 
+/* Tarjetas de pilares industriales */
 .pillar-card {
-
-background-color: var(--white); /* Fondo blanco limpio */
-
-padding: 28px; /* Espacio interior cómodo */
-
-border-radius: 8px; /* Esquinas suavizadas */
-
-border: 1px solid var(--border-gray); /* Borde fino corporativo */
-
+  background-color: var(--white); /* Fondo blanco */
+  padding: 28px; /* Relleno interno */
+  border-radius: 10px; /* Esquinas redondeadas */
+  border: 1px solid var(--border-gray); /* Borde limpio */
+  box-shadow: 0 4px 14px rgba(11, 37, 69, 0.04); /* Sombra muy sutil */
 }
 
-/* Subtítulo dentro de cada tarjeta de pilar */
-
+/* Subtítulo de cada pilar */
 .pillar-card h3 {
-
-color: var(--ocean); /* Azul océano */
-
-margin-bottom: 10px; /* Espacio antes de la descripción */
-
+  color: var(--ocean); /* Azul océano */
+  margin-bottom: 10px; /* Separación del texto */
 }
 
-/* Título separador para distinguir Misión Mar y Marguajira */
-
+/* Título separador de marca (Misión Mar / Marguajira) */
 .brand-title {
-
-font-size: 1.5rem; /* Tamaño destacado */
-
-color: var(--navy); /* Azul marino */
-
-border-left: 4px solid var(--gold); /* Barra vertical dorada decorativa a la izquierda */
-
-padding-left: 14px; /* Separación entre la barra dorada y el texto */
-
-margin-bottom: 24px; /* Espacio respecto a la fila de productos */
-
+  font-size: 1.55rem; /* Destacado */
+  color: var(--navy); /* Azul marino */
+  border-left: 4px solid var(--gold); /* Franja dorada a la izquierda */
+  padding-left: 14px; /* Espacio tras la franja */
+  margin-bottom: 24px; /* Espacio antes de las tarjetas */
 }
 
-/* Separación adicional entre el bloque de Misión Mar y el de Marguajira */
-
+/* Margen superior para separar la línea Marguajira de Misión Mar */
 .mt-space {
-
-margin-top: 52px; /* Aire suficiente para diferenciar ambas líneas */
-
+  margin-top: 56px; /* Aire suficiente entre ambas marcas */
 }
 
-/* Tarjeta individual de cada conserva en el catálogo */
-
+/* Tarjeta individual de producto */
 .product-card {
-
-background-color: var(--white); /* Fondo blanco */
-
-border-radius: 10px; /* Esquinas redondeadas */
-
-overflow: hidden; /* Recorta las esquinas superiores de la foto siguiendo el radio de la tarjeta */
-
-border: 1px solid var(--border-gray); /* Borde limpio */
-
-display: flex; /* Permite organizar foto arriba y descripción abajo */
-
-flex-direction: column; /* Dirección vertical */
-
+  background-color: var(--white); /* Fondo blanco */
+  border-radius: 12px; /* Esquinas redondeadas */
+  overflow: hidden; /* Mantiene las esquinas limpias */
+  border: 1px solid var(--border-gray); /* Borde suave */
+  box-shadow: 0 6px 18px rgba(11, 37, 69, 0.06); /* Elevación elegante */
+  display: flex; /* Estructura vertical */
+  flex-direction: column; /* Imagen arriba y texto abajo */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efecto sutil al pasar el mouse */
 }
 
-/* Fotografía de cada producto */
+/* Ligera elevación de la tarjeta al pasar el cursor */
+.product-card:hover {
+  transform: translateY(-4px); /* Sube 4px suavemente */
+  box-shadow: 0 12px 24px rgba(11, 37, 69, 0.12); /* Sombra más profunda */
+}
 
+/* Marco limpio tipo estudio fotográfico para lucir tus latas PNG completas sin recortes */
+.product-img-wrap {
+  width: 100%; /* Ancho total de la tarjeta */
+  height: 250px; /* Altura uniforme en todas las tarjetas */
+  padding: 20px; /* Aire alrededor de cada lata */
+  background: radial-gradient(circle, #ffffff 15%, #ebf2f7 100%); /* Fondo claro suave que realza el producto */
+  display: flex; /* Centra la lata en ambos ejes */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  border-bottom: 1px solid #eef2f6; /* Separador fino */
+}
+
+/* Imagen PNG de cada lata dentro de su marco */
 .product-img {
-
-width: 100%; /* Cubre todo el ancho de la tarjeta */
-
-height: 220px; /* Altura fija para que todas las tarjetas queden perfectamente alineadas */
-
-object-fit: cover; /* Rellena el recuadro manteniendo la proporción real de la foto */
-
-background-color: var(--border-gray); /* Fondo gris visible si aún falta cargar una foto */
-
+  max-width: 100%; /* Nunca se sale del ancho */
+  max-height: 100%; /* Nunca se corta arriba ni abajo */
+  width: auto; /* Mantiene proporción exacta */
+  height: auto; /* Mantiene proporción exacta */
+  object-fit: contain; /* Garantiza ver la lata entera sin recortar etiquetas */
+  filter: drop-shadow(0 10px 14px rgba(11, 37, 69, 0.18)); /* Sombra realista proyectada por la propia lata PNG */
 }
 
 /* Contenedor de texto dentro de la tarjeta de producto */
-
 .product-body {
-
-padding: 20px; /* Margen interior alrededor del texto */
-
+  padding: 22px; /* Relleno cómodo */
 }
 
-/* Etiqueta azul para identificar la marca Misión Mar */
-
+/* Etiqueta azul de marca Misión Mar */
 .brand-tag {
-
-display: inline-block; /* Se ajusta al tamaño del texto */
-
-background-color: var(--ocean); /* Fondo azul océano */
-
-color: var(--white); /* Letras blancas */
-
-font-size: 0.75rem; /* Tamaño compacto de etiqueta */
-
-font-weight: 700; /* Negrita */
-
-padding: 4px 10px; /* Relleno pequeño */
-
-border-radius: 4px; /* Bordes ligeramente curvos */
-
-margin-bottom: 10px; /* Separación con el título del producto */
-
-text-transform: uppercase; /* Muestra el nombre de marca en mayúsculas */
-
+  display: inline-block; /* Ajustado al texto */
+  background-color: var(--ocean); /* Azul océano */
+  color: var(--white); /* Texto blanco */
+  font-size: 0.75rem; /* Compacto */
+  font-weight: 700; /* Negrita */
+  padding: 4px 10px; /* Relleno pequeño */
+  border-radius: 4px; /* Bordes curvos */
+  margin-bottom: 10px; /* Espacio antes del nombre */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: 0.4px; /* Espaciado limpio entre letras */
 }
 
-/* Variante dorada de la etiqueta para identificar Marguajira */
-
+/* Variante dorada de etiqueta para Marguajira */
 .brand-tag.gold {
-
-background-color: var(--gold); /* Fondo dorado */
-
-color: var(--navy); /* Letras en azul marino para mejor lectura */
-
+  background-color: var(--gold); /* Fondo dorado */
+  color: var(--navy); /* Letras azul marino */
 }
 
-/* Nombre comercial del producto */
-
+/* Nombre del producto */
 .product-body h4 {
-
-font-size: 1.15rem; /* Tamaño claro y jerarquizado */
-
-color: var(--navy); /* Azul marino */
-
-margin-bottom: 8px; /* Espacio antes del gramaje y bulto */
-
+  font-size: 1.15rem; /* Tamaño claro */
+  color: var(--navy); /* Azul marino */
+  margin-bottom: 8px; /* Espacio antes del detalle */
 }
 
-/* Descripción de presentación y bulto */
-
+/* Descripción de gramaje y uso */
 .product-body p {
-
-font-size: 0.92rem; /* Letra ligeramente más compacta */
-
-color: var(--text-muted); /* Gris intermedio */
-
+  font-size: 0.93rem; /* Lectura limpia */
+  color: var(--text-muted); /* Gris intermedio */
 }
 
-/* Sección 4: Franja intermedia oscura orientada a mayoristas B2B */
-
-.b2b-banner {
-
-background-color: var(--navy); /* Fondo oscuro para romper el ritmo visual y captar atención */
-
-color: var(--white); /* Texto blanco */
-
-padding: 58px 0; /* Altura intermedia */
-
+/* Sección 4: Apartado de Co-Packing y Alianzas con fondo del mar difuminado */
+.copacking-section {
+  position: relative; /* Contenedor de capas de fondo */
+  overflow: hidden; /* Oculta excesos del desenfoque */
+  color: var(--white); /* Texto blanco */
+  background-color: var(--navy-deep); /* Respaldo marino */
 }
 
-/* Acomodo horizontal del texto B2B y su botón de contacto */
-
-.b2b-content {
-
-display: flex; /* Coloca texto y botón en línea */
-
-justify-content: space-between; /* Separa ambos bloques a los extremos */
-
-align-items: center; /* Centra verticalmente el botón con el texto */
-
-gap: 24px; /* Espacio mínimo cuando bajan a dos filas en móvil */
-
-flex-wrap: wrap; /* Adaptable a cualquier ancho de pantalla */
-
+/* Foto del mar difuminada detrás de Co-Packing */
+.copacking-bg {
+  position: absolute; /* Detrás del contenido */
+  inset: 0; /* Cubre toda la sección */
+  background-image: url("img/mar.png"); /* Reutiliza la misma imagen del mar para coherencia visual */
+  background-size: cover; /* Llena todo el espacio */
+  background-position: center bottom; /* Muestra la parte inferior del oleaje para variar respecto a la portada */
+  filter: blur(7px) saturate(1.05); /* Desenfoque aún más suave tipo vidrio esmerilado */
+  transform: scale(1.1); /* Evita bordes transparentes */
+  z-index: 1; /* Capa inferior */
 }
 
-/* Título de la franja B2B */
-
-.b2b-content h2 {
-
-font-size: 1.8rem; /* Tamaño fuerte */
-
-margin-bottom: 8px; /* Espacio inferior */
-
+/* Degradado marino profundo sobre la foto de Co-Packing */
+.copacking-overlay {
+  position: absolute; /* Entre la foto y las tarjetas */
+  inset: 0; /* Cubre toda la sección */
+  background: linear-gradient(180deg, rgba(7, 25, 48, 0.88) 0%, rgba(19, 64, 116, 0.78) 100%); /* Degradado vertical elegante */
+  z-index: 2; /* Capa intermedia */
 }
 
-/* Párrafo explicativo de la franja B2B */
-
-.b2b-content p {
-
-color: #cbd5e1; /* Gris claro legible sobre azul marino */
-
-max-width: 620px; /* Evita que choque con el botón */
-
+/* Contenido principal de Co-Packing por encima del fondo */
+.copacking-inner {
+  position: relative; /* Activa z-index */
+  z-index: 3; /* Contenido nítido en primer plano */
 }
 
-/* Sección 5: Cuadrícula de dos columnas para datos comerciales y formulario */
+/* Tarjetas translúcidas modernas sobre el mar (efecto cristal marino) */
+.copacking-card {
+  background-color: rgba(255, 255, 255, 0.09); /* Blanco muy suave semitransparente */
+  backdrop-filter: blur(10px); /* Efecto cristal esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Borde luminoso sutil */
+  padding: 28px; /* Espacio interno cómodo */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
 
+/* Título dentro de cada tarjeta de Co-Packing */
+.copacking-card h3 {
+  color: #fcd34d; /* Dorado claro de alto contraste sobre marino */
+  font-size: 1.2rem; /* Tamaño destacado */
+  margin-bottom: 10px; /* Separación del párrafo */
+}
+
+/* Descripción dentro de cada tarjeta de Co-Packing */
+.copacking-card p {
+  color: #e2e8f0; /* Blanco suave muy legible */
+  font-size: 0.95rem; /* Lectura fluida */
+}
+
+/* Contenedor centrado del botón inferior de Co-Packing */
+.copacking-cta {
+  text-align: center; /* Centra el botón horizontalmente */
+  margin-top: 40px; /* Separación respecto a las 3 tarjetas */
+}
+
+/* Sección 5: Contacto y formulario comercial */
 .contact-grid {
-
-display: grid; /* Diseño en columnas flexibles */
-
-grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); /* Dos columnas en escritorio y una sola en teléfono */
-
-gap: 40px; /* Separación cómoda entre información y formulario */
-
-align-items: start; /* Alinea ambas columnas desde la parte superior */
-
+  display: grid; /* Dos columnas en PC */
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); /* Adaptable a una columna en móvil */
+  gap: 40px; /* Separación amplia */
+  align-items: start; /* Alinea desde arriba */
 }
 
 /* Título de la columna de contacto */
-
 .contact-info h2 {
-
-font-size: 2rem; /* Mismo tamaño que los demás encabezados H2 */
-
-color: var(--navy); /* Azul marino */
-
-margin-bottom: 12px; /* Separación inferior */
-
+  font-size: 2rem; /* Consistente con los demás H2 */
+  color: var(--navy); /* Azul marino */
+  margin-bottom: 12px; /* Separación inferior */
 }
 
-/* Lista de correo, planta y marcas */
-
+/* Lista de correo, ubicación y líneas */
 .contact-list {
-
-list-style: none; /* Elimina los puntos negros predeterminados de las listas HTML */
-
-margin-top: 24px; /* Separa la lista del párrafo introductorio */
-
-display: flex; /* Permite controlar el espacio entre elementos */
-
-flex-direction: column; /* Apila cada dato en su propia línea */
-
-gap: 12px; /* Separación uniforme entre filas */
-
+  list-style: none; /* Sin viñetas */
+  margin-top: 24px; /* Espacio superior */
+  display: flex; /* Apilado limpio */
+  flex-direction: column; /* En columna */
+  gap: 12px; /* Espacio entre líneas */
 }
 
-/* Recuadro blanco del formulario de cotización */
-
+/* Caja blanca del formulario */
 .contact-form {
-
-background-color: var(--white); /* Fondo blanco que destaca sobre la sección gris clara */
-
-padding: 28px; /* Relleno interior generoso */
-
-border-radius: 10px; /* Esquinas redondeadas */
-
-border: 1px solid var(--border-gray); /* Borde sutil */
-
-display: flex; /* Organiza etiquetas, campos y botón en columna */
-
-flex-direction: column; /* Dirección vertical */
-
-gap: 12px; /* Espacio uniforme entre cada campo */
-
+  background-color: var(--white); /* Fondo blanco */
+  padding: 30px; /* Relleno cómodo */
+  border-radius: 12px; /* Esquinas redondeadas */
+  border: 1px solid var(--border-gray); /* Borde sutil */
+  box-shadow: 0 6px 18px rgba(11, 37, 69, 0.05); /* Sombra ligera */
+  display: flex; /* Organiza etiquetas y campos */
+  flex-direction: column; /* En columna vertical */
+  gap: 12px; /* Separación entre elementos */
 }
 
-/* Etiquetas descriptivas encima de cada casilla del formulario */
-
+/* Etiquetas encima de cada campo */
 .contact-form label {
-
-font-weight: 600; /* Seminegrita para identificar rápido cada campo */
-
-font-size: 0.9rem; /* Tamaño limpio */
-
-color: var(--navy); /* Azul marino */
-
+  font-weight: 600; /* Seminegrita */
+  font-size: 0.9rem; /* Tamaño limpio */
+  color: var(--navy); /* Azul marino */
 }
 
-/* Campos de texto y cuadro de pedido del formulario */
-
+/* Campos de texto, desplegable select y caja de mensaje */
 .contact-form input,
-
+.contact-form select,
 .contact-form textarea {
-
-width: 100%; /* Ocupan todo el ancho interior del formulario */
-
-padding: 12px; /* Espacio cómodo para escribir */
-
-border: 1px solid #cbd5e1; /* Borde gris visible */
-
-border-radius: 6px; /* Esquinas suaves */
-
-font-family: inherit; /* Hereda la misma fuente del sitio */
-
-font-size: 0.95rem; /* Tamaño cómodo al escribir en celular o PC */
-
+  width: 100%; /* Ancho completo del formulario */
+  padding: 12px; /* Relleno cómodo */
+  border: 1px solid #cbd5e1; /* Borde gris claro */
+  border-radius: 6px; /* Esquinas suaves */
+  font-family: inherit; /* Misma fuente de toda la página */
+  font-size: 0.95rem; /* Lectura cómoda */
+  background-color: var(--white); /* Fondo blanco también para el selector */
+  color: var(--text-dark); /* Texto oscuro legible */
 }
 
-/* Resaltado del campo cuando el usuario hace clic para escribir */
-
+/* Efecto visual cuando el usuario selecciona un campo para escribir */
 .contact-form input:focus,
-
+.contact-form select:focus,
 .contact-form textarea:focus {
-
-outline: none; /* Quita el borde negro grueso por defecto */
-
-border-color: var(--ocean); /* Ilumina el borde con el azul océano corporativo */
-
+  outline: none; /* Quita el contorno negro estándar */
+  border-color: var(--ocean); /* Resalta el borde en azul océano */
+  box-shadow: 0 0 0 3px rgba(19, 64, 116, 0.12); /* Halo azul suave */
 }
 
-/* Pie de página final */
-
+/* Pie de página corporativo */
 .footer {
-
-background-color: #071930; /* Azul marino más profundo para cerrar el sitio */
-
-color: #94a3b8; /* Texto gris azulado sobrio */
-
-padding: 28px 0; /* Altura compacta */
-
-font-size: 0.9rem; /* Letra discreta */
-
+  background-color: var(--navy-deep); /* Azul marino profundo */
+  color: #94a3b8; /* Gris azulado discreto */
+  padding: 28px 0; /* Altura compacta */
+  font-size: 0.9rem; /* Tamaño discreto */
 }
 
-/* Distribución del contenido dentro del pie de página */
-
+/* Alineación de textos en el pie de página */
 .footer-content {
-
-display: flex; /* Alinea derechos y correo en fila */
-
-justify-content: space-between; /* Uno a la izquierda y otro a la derecha */
-
-flex-wrap: wrap; /* En teléfono baja a dos líneas ordenadas */
-
-gap: 12px; /* Espacio entre líneas si se apilan */
-
+  display: flex; /* En línea horizontal */
+  justify-content: space-between; /* Uno a cada extremo */
+  flex-wrap: wrap; /* Baja a dos filas en móvil */
+  gap: 12px; /* Espacio al apilarse */
 }
 
-/* Enlace del correo ventas@kamada.com.ve en el pie de página */
-
+/* Enlace del correo en el pie */
 .footer a {
-
-color: #fcd34d; /* Dorado claro visible sobre fondo oscuro */
-
-text-decoration: none; /* Sin subrayado */
-
+  color: #fcd34d; /* Dorado claro */
+  text-decoration: none; /* Sin subrayado */
 }
 
-/* Reglas adaptables exclusivas para teléfonos móviles (pantallas menores a 680px) */
-
+/* Ajustes responsivos para teléfonos móviles */
 @media (max-width: 680px) {
-
-.nav-links a:not(.btn-nav) {
-
-display: none; /* Oculta los enlaces secundarios en móvil y deja visible el botón Cotizar */
-
-}
-
-.hero h1 {
-
-font-size: 1.9rem; /* Reduce el titular principal para evitar saltos bruscos en pantallas angostas */
-
-}
-
+  .nav-links a:not(.btn-nav) {
+    display: none; /* Oculta enlaces secundarios en celular y deja visible Cotizar */
+  }
+  .logo-img {
+    height: 52px; /* Ajusta el tamaño del logo en pantallas angostas */
+  }
+  .hero {
+    padding: 80px 0 110px 0; /* Reduce espacio vertical en celular */
+  }
+  .hero h1 {
+    font-size: 1.95rem; /* Evita saltos bruscos de línea */
+  }
+  .products-grid.single-col {
+    grid-template-columns: 1fr; /* Ocupa todo el ancho cómodo en móvil */
+  }
 }
