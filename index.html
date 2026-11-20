@@ -15,7 +15,7 @@
   <header class="navbar"> <!-- Barra de navegación superior fija -->
     <div class="container nav-content"> <!-- Contenedor centrado de logo y enlaces -->
       <a href="#inicio" class="logo-link"> <!-- Enlace del logo hacia la portada -->
-        <img src="img/logo-kamada.png" alt="Logo Kamada" class="logo-img"> <!-- Ruta exacta del logotipo dentro de img/ -->
+        <img src="img/logo-kamada.png" alt="Logo Kamada" class="logo-img"> <!-- Logotipo que se duplicará de tamaño en el CSS -->
       </a> <!-- Cierra enlace del logo -->
       <nav class="nav-links"> <!-- Menú principal de navegación -->
         <a href="#nosotros">Nosotros</a> <!-- Baja al respaldo industrial -->
@@ -26,8 +26,8 @@
     </div> <!-- Cierra contenedor de barra -->
   </header> <!-- Cierra encabezado -->
 
-  <section id="inicio" class="hero"> <!-- Sección 1: Portada principal que usará img/mar.png difuminado con degradado en CSS -->
-    <div class="hero-bg" aria-hidden="true"></div> <!-- Capa exclusiva para la foto del mar con efecto blur/brushed sin desenfocar el texto -->
+  <section id="inicio" class="hero"> <!-- Sección 1: Portada principal con fondo del mar difuminado -->
+    <div class="hero-bg" aria-hidden="true"></div> <!-- Capa exclusiva para la foto del mar con efecto blur/brushed -->
     <div class="hero-overlay" aria-hidden="true"></div> <!-- Capa de degradado marino suave encima de la foto -->
     <div class="container hero-inner"> <!-- Contenido nítido por encima del fondo marino -->
       <div class="hero-text"> <!-- Bloque de texto con ancho controlado -->
@@ -42,7 +42,7 @@
     </div> <!-- Cierra contenedor de portada -->
     <div class="hero-wave" aria-hidden="true"> <!-- Curva de ola al pie de la portada -->
       <svg viewBox="0 0 1440 90" preserveAspectRatio="none"> <!-- Lienzo vectorial adaptable -->
-        <path d="M0,48 C240,95 480,0 720,42 C960,84 1200,18 1440,54 L1440,90 L0,90 Z"></path> <!-- Forma vectorial suave que une el mar con la siguiente sección -->
+        <path d="M0,48 C240,95 480,0 720,42 C960,84 1200,18 1440,54 L1440,90 L0,90 Z"></path> <!-- Forma vectorial que une el mar con la siguiente sección -->
       </svg> <!-- Cierra SVG -->
     </div> <!-- Cierra ola -->
   </section> <!-- Cierra portada -->
@@ -70,20 +70,19 @@
     </div> <!-- Cierra contenedor -->
   </section> <!-- Cierra Nosotros -->
 
-  <section id="marcas" class="section"> <!-- Sección 3: Catálogo real ajustado a tus fotos en img/ -->
+  <section id="marcas" class="section"> <!-- Sección 3: Catálogo unificado en una sola fila de 4 productos -->
     <div class="container"> <!-- Centra el catálogo -->
       <div class="section-header"> <!-- Encabezado del catálogo -->
         <h2>Nuestras Marcas y Presentaciones</h2> <!-- Título -->
-        <p>Portafolio comercial disponible para distribución regional, nacional e institucional.</p> <!-- Subtítulo -->
+        <p>Portafolio comercial de <strong>Misión Mar</strong> y <strong>Marguajira</strong> disponible para distribución regional, nacional e institucional.</p> <!-- Subtítulo mencionando ambas líneas -->
       </div> <!-- Cierra encabezado -->
 
-      <h3 class="brand-title">Línea Misión Mar</h3> <!-- Separador de Misión Mar -->
-      <div class="products-grid single-col"> <!-- Cuadrícula enfocada para la presentación actual de Misión Mar -->
+      <div class="products-grid four-cols"> <!-- Cuadrícula configurada para 4 productos en una sola fila en PC, 2 en tablet y 1 en móvil -->
 
-        <article class="product-card"> <!-- Producto 1 Misión Mar -->
-          <div class="product-img-wrap"> <!-- Marco limpio para lucir latas PNG sin recortes -->
-            <img src="img/sardines-oil-mision-mar-6oz.png" alt="Sardinas Misión Mar en Aceite Vegetal 6 oz" class="product-img"> <!-- Archivo real en img/ -->
-          </div> <!-- Cierra marco de imagen -->
+        <article class="product-card"> <!-- Producto 1: Misión Mar -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+            <img src="img/sardines-oil-mision-mar-6oz.png" alt="Sardinas Misión Mar en Aceite Vegetal 6 oz" class="product-img"> <!-- Foto real en img/ -->
+          </div> <!-- Cierra recuadro de imagen -->
           <div class="product-body"> <!-- Texto de la tarjeta -->
             <span class="brand-tag">Misión Mar</span> <!-- Etiqueta azul corporativa -->
             <h4>Sardinas en Aceite Vegetal (6 oz)</h4> <!-- Nombre comercial exacto -->
@@ -91,49 +90,44 @@
           </div> <!-- Cierra cuerpo -->
         </article> <!-- Cierra Producto 1 -->
 
-      </div> <!-- Cierra cuadrícula Misión Mar -->
-
-      <h3 class="brand-title mt-space">Línea Marguajira</h3> <!-- Separador de Marguajira -->
-      <div class="products-grid"> <!-- Cuadrícula de 3 columnas exactas para las 3 fotos de Marguajira -->
-
-        <article class="product-card"> <!-- Producto 1 Marguajira -->
-          <div class="product-img-wrap"> <!-- Marco limpio para PNG -->
-            <img src="img/sardinas-italiana-marguajira-170g.png" alt="Sardinas Marguajira en Salsa Italiana 170 g" class="product-img"> <!-- Archivo real en img/ -->
-          </div> <!-- Cierra marco -->
+        <article class="product-card"> <!-- Producto 2: Marguajira Italiana -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+            <img src="img/sardinas-italiana-marguajira-170g.png" alt="Sardinas Marguajira en Salsa Italiana 170 g" class="product-img"> <!-- Foto real en img/ -->
+          </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
             <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
             <h4>Sardinas en Salsa Italiana (170 g)</h4> <!-- Nombre comercial -->
             <p>Salsa condimentada de gran aceptación popular y salida continua en anaquel. Lata de 170 g.</p> <!-- Detalle -->
           </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 1 Marguajira -->
+        </article> <!-- Cierra Producto 2 -->
 
-        <article class="product-card"> <!-- Producto 2 Marguajira -->
-          <div class="product-img-wrap"> <!-- Marco limpio para PNG -->
-            <img src="img/sardinas-aceite-marguajira-170g.png" alt="Sardinas Marguajira en Aceite 170 g" class="product-img"> <!-- Archivo real en img/ -->
-          </div> <!-- Cierra marco -->
+        <article class="product-card"> <!-- Producto 3: Marguajira Aceite -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+            <img src="img/sardinas-aceite-marguajira-170g.png" alt="Sardinas Marguajira en Aceite 170 g" class="product-img"> <!-- Foto real en img/ -->
+          </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
             <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
             <h4>Sardinas en Aceite (170 g)</h4> <!-- Nombre comercial -->
             <p>Conserva clásica en aceite vegetal de excelente rendimiento para retail y mayoristas. Lata de 170 g.</p> <!-- Detalle -->
           </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 2 Marguajira -->
+        </article> <!-- Cierra Producto 3 -->
 
-        <article class="product-card"> <!-- Producto 3 Marguajira -->
-          <div class="product-img-wrap"> <!-- Marco limpio para PNG -->
-            <img src="img/atun-natural-marguajira-140g.png" alt="Atún al Natural Marguajira 140 g" class="product-img"> <!-- Archivo real en img/ -->
-          </div> <!-- Cierra marco -->
+        <article class="product-card"> <!-- Producto 4: Marguajira Atún -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+            <img src="img/atun-natural-marguajira-140g.png" alt="Atún al Natural Marguajira 140 g" class="product-img"> <!-- Foto real en img/ -->
+          </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
             <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
             <h4>Atún al Natural (140 g)</h4> <!-- Nombre comercial -->
             <p>Alto aporte proteico en presentación ligera ideal para supermercados, distribuidores y foodservice. Lata de 140 g.</p> <!-- Detalle -->
           </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 3 Marguajira -->
+        </article> <!-- Cierra Producto 4 -->
 
-      </div> <!-- Cierra cuadrícula Marguajira -->
+      </div> <!-- Cierra cuadrícula de 4 productos -->
     </div> <!-- Cierra contenedor de marcas -->
   </section> <!-- Cierra Marcas -->
 
-  <section id="copacking" class="section copacking-section"> <!-- Sección 4: Apartado de Co-Packing con fondo marino degradado en CSS -->
+  <section id="copacking" class="section copacking-section"> <!-- Sección 4: Apartado de Co-Packing con fondo marino degradado -->
     <div class="copacking-bg" aria-hidden="true"></div> <!-- Capa de fondo marino difuminado -->
     <div class="copacking-overlay" aria-hidden="true"></div> <!-- Velo degradado para garantizar lectura nítida -->
     <div class="container copacking-inner"> <!-- Contenido elevado sobre el fondo -->
