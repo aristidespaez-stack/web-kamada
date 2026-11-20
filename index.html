@@ -4,18 +4,25 @@
 <head> <!-- Cabecera técnica no visible en pantalla -->
   <meta charset="UTF-8"> <!-- Codificación para tildes, eñes y símbolos -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala adaptable a teléfonos, tabletas y PC -->
-  <meta name="description" content="Kamada: planta procesadora de conservas de pescado en Valencia, Venezuela. Marcas Misión Mar y Marguajira, distribución mayorista y servicio de Co-Packing con alianzas estratégicas."> <!-- Descripción para Google -->
-  <meta name="keywords" content="Kamada, Misión Mar, Marguajira, sardinas enlatadas, atún natural, co-packing Venezuela, maquila de conservas, Valencia Carabobo"> <!-- Palabras clave comerciales -->
-  <title>Kamada | Conservas de Pescado, Misión Mar, Marguajira y Co-Packing</title> <!-- Título en la pestaña del navegador -->
+  <meta name="description" content="Representaciones Kamada, C.A.: planta procesadora de conservas de pescado en Valencia, Venezuela. Marcas Misión Mar y Marguajira, distribución mayorista y servicio de Co-Packing con alianzas estratégicas."> <!-- Descripción para Google -->
+  <meta name="keywords" content="Representaciones Kamada, Kamada, Misión Mar, Marguajira, sardinas enlatadas, atún natural, co-packing Venezuela, maquila de conservas, Valencia Carabobo"> <!-- Palabras clave comerciales -->
+  <title>Representaciones Kamada, C.A. | Conservas de Pescado y Co-Packing</title> <!-- Título en la pestaña del navegador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Acelera la conexión con Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconecta el servidor de tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"> <!-- Carga la fuente Montserrat para destacar el nombre corporativo -->
   <link rel="stylesheet" href="style.css"> <!-- Enlaza la hoja de estilos local -->
 </head> <!-- Cierra la cabecera técnica -->
 
 <body> <!-- Inicia el contenido visible de la web -->
 
   <header class="navbar"> <!-- Barra de navegación superior fija -->
-    <div class="container nav-content"> <!-- Contenedor centrado de logo y enlaces -->
-      <a href="#inicio" class="logo-link"> <!-- Enlace del logo hacia la portada -->
-        <img src="img/logo-kamada.png" alt="Logo Kamada" class="logo-img"> <!-- Logotipo que se duplicará de tamaño en el CSS -->
+    <div class="container nav-content"> <!-- Contenedor centrado de identidad de marca y enlaces -->
+      <a href="#inicio" class="logo-link"> <!-- Bloque clicable con el sello y el nombre corporativo -->
+        <img src="img/logo-kamada.png" alt="Logo Representaciones Kamada, C.A." class="logo-img"> <!-- Logotipo circular en img/ -->
+        <div class="brand-lockup"> <!-- Contenedor del nombre corporativo al lado del logo -->
+          <span class="brand-prefix">Representaciones</span> <!-- Línea superior en mayúsculas con acento dorado -->
+          <span class="brand-main">KAMADA<span class="brand-suffix">, C.A.</span></span> <!-- Nombre principal en negrita destacada -->
+        </div> <!-- Cierra el bloque del nombre -->
       </a> <!-- Cierra enlace del logo -->
       <nav class="nav-links"> <!-- Menú principal de navegación -->
         <a href="#nosotros">Nosotros</a> <!-- Baja al respaldo industrial -->
@@ -80,7 +87,7 @@
       <div class="products-grid four-cols"> <!-- Cuadrícula configurada para 4 productos en una sola fila en PC, 2 en tablet y 1 en móvil -->
 
         <article class="product-card"> <!-- Producto 1: Misión Mar -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta al pasar el cursor -->
             <img src="img/sardines-oil-mision-mar-6oz.png" alt="Sardinas Misión Mar en Aceite Vegetal 6 oz" class="product-img"> <!-- Foto real en img/ -->
           </div> <!-- Cierra recuadro de imagen -->
           <div class="product-body"> <!-- Texto de la tarjeta -->
@@ -91,7 +98,7 @@
         </article> <!-- Cierra Producto 1 -->
 
         <article class="product-card"> <!-- Producto 2: Marguajira Italiana -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta al pasar el cursor -->
             <img src="img/sardinas-italiana-marguajira-170g.png" alt="Sardinas Marguajira en Salsa Italiana 170 g" class="product-img"> <!-- Foto real en img/ -->
           </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
@@ -102,7 +109,7 @@
         </article> <!-- Cierra Producto 2 -->
 
         <article class="product-card"> <!-- Producto 3: Marguajira Aceite -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta al pasar el cursor -->
             <img src="img/sardinas-aceite-marguajira-170g.png" alt="Sardinas Marguajira en Aceite 170 g" class="product-img"> <!-- Foto real en img/ -->
           </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
@@ -113,7 +120,7 @@
         </article> <!-- Cierra Producto 3 -->
 
         <article class="product-card"> <!-- Producto 4: Marguajira Atún -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resaltará al pasar el cursor -->
+          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta al pasar el cursor -->
             <img src="img/atun-natural-marguajira-140g.png" alt="Atún al Natural Marguajira 140 g" class="product-img"> <!-- Foto real en img/ -->
           </div> <!-- Cierra recuadro -->
           <div class="product-body"> <!-- Texto -->
@@ -163,7 +170,7 @@
   <section id="contacto" class="section bg-light"> <!-- Sección 5: Contacto y formulario comercial -->
     <div class="container contact-grid"> <!-- Cuadrícula de dos columnas -->
       <div class="contact-info"> <!-- Columna izquierda -->
-        <h2>Solicita tu Cotización o Reunión Comercial</h2> <!-- Título -->
+        <h2>Solicita tu Cotización o Reunión Comercial</h2> <!-- Título cercano y profesional -->
         <p>Escríbenos para recibir precios al mayor de nuestras marcas propias o coordinar una evaluación técnica para proyectos de Co-Packing y alianzas estratégicas.</p> <!-- Instrucción -->
         <ul class="contact-list"> <!-- Datos directos -->
           <li><strong>Correo Comercial:</strong> ventas@kamada.com.ve</li> <!-- Correo -->
@@ -194,7 +201,7 @@
 
   <footer class="footer"> <!-- Pie de página -->
     <div class="container footer-content"> <!-- Contenedor del pie -->
-      <p>&copy; 2026 Kamada. Todos los derechos reservados. Valencia, Carabobo, Venezuela.</p> <!-- Derechos -->
+      <p>&copy; 2026 Representaciones Kamada, C.A. Todos los derechos reservados. Valencia, Carabobo, Venezuela.</p> <!-- Derechos con razón social completa -->
       <p>Ventas y Alianzas: <a href="mailto:ventas@kamada.com.ve">ventas@kamada.com.ve</a></p> <!-- Correo -->
     </div> <!-- Cierra contenedor del pie -->
   </footer> <!-- Cierra pie -->

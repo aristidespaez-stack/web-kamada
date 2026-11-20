@@ -10,7 +10,7 @@
   --navy-deep: #071930; /* Azul marino profundo para cierres y degradados */
   --navy: #0b2545; /* Azul marino corporativo principal de Kamada */
   --ocean: #134074; /* Azul océano secundario */
-  --gold: #d99b26; /* Dorado corporativo para botones, etiquetas y resaltados */
+  --gold: #d99b26; /* Dorado corporativo para botones, etiquetas y acentos */
   --gold-hover: #eab308; /* Dorado luminoso al pasar el cursor */
   --light-bg: #f4f7fa; /* Fondo gris azulado suave para secciones claras */
   --border-gray: #e2e8f0; /* Borde gris sutil para tarjetas y divisiones */
@@ -22,7 +22,7 @@
 /* Configuración general de tipografía y desplazamiento suave */
 html {
   scroll-behavior: smooth; /* Desplazamiento animado al hacer clic en los enlaces del menú */
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuente moderna nativa que carga al instante */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuente base limpia para párrafos */
   color: var(--text-dark); /* Color base del texto */
   line-height: 1.6; /* Espaciado cómodo entre líneas */
 }
@@ -41,7 +41,7 @@ body {
 
 /* Barra superior de navegación fija */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.96); /* Fondo blanco casi sólido */
+  background-color: rgba(255, 255, 255, 0.97); /* Fondo blanco casi sólido */
   backdrop-filter: blur(8px); /* Suaviza el contenido que pasa por detrás al hacer scroll */
   border-bottom: 1px solid var(--border-gray); /* Línea sutil separadora */
   position: sticky; /* Mantiene la barra visible en la parte superior */
@@ -49,23 +49,26 @@ body {
   z-index: 100; /* Siempre por encima de las demás secciones */
 }
 
-/* Distribución interna de la barra superior adaptada al logo al doble de tamaño */
+/* Distribución interna de la barra superior adaptada al logo grande + nombre corporativo */
 .nav-content {
-  display: flex; /* Coloca logo y enlaces en la misma fila */
-  justify-content: space-between; /* Logo a la izquierda y menú a la derecha */
+  display: flex; /* Coloca bloque de marca y enlaces en la misma fila */
+  justify-content: space-between; /* Marca a la izquierda y menú a la derecha */
   align-items: center; /* Centra verticalmente ambos bloques */
-  padding: 10px 0; /* Aire superior e inferior proporcional al nuevo tamaño del logo */
+  gap: 16px; /* Espacio mínimo de seguridad entre la razón social y el menú */
+  padding: 10px 0; /* Aire superior e inferior proporcional al logo */
   min-height: 146px; /* Altura cómoda para alojar el logo de 128px sin recortarlo */
 }
 
-/* Enlace contenedor del logotipo */
+/* Bloque clicable que agrupa el logotipo circular y el nombre Representaciones Kamada, C.A. */
 .logo-link {
-  display: flex; /* Elimina espacios invisibles debajo de la imagen */
-  align-items: center; /* Centra el logo verticalmente */
-  flex-shrink: 0; /* Impide que el logo se aplaste si falta espacio */
+  display: flex; /* Coloca logo y texto uno al lado del otro */
+  align-items: center; /* Alinea verticalmente el texto con el centro del sello */
+  gap: 16px; /* Separación elegante entre el logo y la barra vertical dorada */
+  text-decoration: none; /* Quita el subrayado azul de los enlaces HTML */
+  flex-shrink: 0; /* Impide que el bloque de marca se comprima en escritorio */
 }
 
-/* Logotipo corporativo al doble del tamaño anterior (de 64px a 128px) */
+/* Logotipo corporativo al doble del tamaño original */
 .logo-img {
   height: 128px; /* Doble de tamaño en escritorio para máxima presencia de marca */
   width: auto; /* Conserva la proporción circular original sin deformar */
@@ -73,16 +76,58 @@ body {
   transition: transform 0.2s ease; /* Ligera respuesta visual al interactuar */
 }
 
-/* Pequeño realce al pasar el cursor sobre el logotipo */
-.logo-img:hover {
+/* Pequeño realce al pasar el cursor sobre el bloque de marca */
+.logo-link:hover .logo-img {
   transform: scale(1.03); /* Aumenta suavemente un 3% */
+}
+
+/* Contenedor del nombre corporativo a la derecha del logotipo */
+.brand-lockup {
+  display: flex; /* Organiza las dos líneas de texto en columna */
+  flex-direction: column; /* "Representaciones" arriba y "KAMADA, C.A." abajo */
+  justify-content: center; /* Centrado vertical respecto al logo */
+  border-left: 3px solid var(--gold); /* Línea vertical dorada que enlaza visualmente sello y nombre */
+  padding-left: 16px; /* Espacio limpio entre la línea dorada y las letras */
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Tipografía geométrica de alto impacto corporativo */
+}
+
+/* Línea superior "REPRESENTACIONES" en dorado con espaciado ejecutivo */
+.brand-prefix {
+  font-size: 0.8rem; /* Tamaño sobrio y elegante por encima del nombre principal */
+  font-weight: 700; /* Negrita limpia para buena legibilidad */
+  text-transform: uppercase; /* Todo en mayúsculas para estética industrial */
+  letter-spacing: 3.4px; /* Espaciado amplio entre letras tipo marca consolidada */
+  color: var(--gold); /* Acento dorado que armoniza con los botones y etiquetas */
+  line-height: 1.2; /* Altura de línea ajustada */
+  margin-bottom: 3px; /* Separación precisa respecto a KAMADA */
+}
+
+/* Línea principal "KAMADA" con degradado marino y peso fuerte */
+.brand-main {
+  font-size: 1.95rem; /* Tamaño protagonista claramente legible a distancia */
+  font-weight: 800; /* Extra negrita de alta autoridad visual */
+  letter-spacing: 1.4px; /* Espaciado firme y balanceado */
+  line-height: 1.05; /* Compacto para mantener bloque sólido */
+  color: var(--navy); /* Color de respaldo si un navegador antiguo no soporta degradado en texto */
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--ocean) 100%); /* Degradado marino profundo */
+  -webkit-background-clip: text; /* Recorta el degradado exactamente sobre la silueta de las letras */
+  background-clip: text; /* Estándar moderno del recorte en texto */
+  -webkit-text-fill-color: transparent; /* Deja ver el degradado marino en las letras */
+}
+
+/* Sufijo ", C.A." estilizado con menor peso para dar jerarquía profesional */
+.brand-suffix {
+  font-size: 1.15rem; /* Más compacto que KAMADA para equilibrar la lectura */
+  font-weight: 700; /* Negrita firme pero subordinada */
+  letter-spacing: 0.6px; /* Espaciado limpio */
+  -webkit-text-fill-color: var(--ocean); /* Tono azul océano ligeramente más claro que KAMADA */
 }
 
 /* Grupo de enlaces del menú */
 .nav-links {
   display: flex; /* Alinea enlaces en fila */
   align-items: center; /* Centra verticalmente */
-  gap: 24px; /* Separación uniforme entre cada opción */
+  gap: 22px; /* Separación uniforme entre cada opción */
 }
 
 /* Estilo de cada enlace de navegación */
@@ -90,7 +135,8 @@ body {
   text-decoration: none; /* Sin subrayado */
   color: var(--navy); /* Azul marino corporativo */
   font-weight: 600; /* Seminegrita */
-  font-size: 0.96rem; /* Tamaño cómodo */
+  font-size: 0.95rem; /* Tamaño cómodo */
+  white-space: nowrap; /* Evita que "Marcas y Productos" se parta en dos líneas */
   transition: color 0.2s ease; /* Cambio suave de color */
 }
 
@@ -167,7 +213,9 @@ body {
 
 /* Titular principal H1 */
 .hero h1 {
-  font-size: 2.75rem; /* Gran presencia visual */
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Conecta visualmente el titular principal con la marca del encabezado */
+  font-size: 2.7rem; /* Gran presencia visual */
+  font-weight: 800; /* Peso contundente */
   line-height: 1.18; /* Interlineado compacto */
   margin-bottom: 20px; /* Separación con el párrafo */
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); /* Sombra suave para despegar el texto del fondo marino */
@@ -276,7 +324,9 @@ body {
 
 /* Títulos H2 de sección */
 .section-header h2 {
-  font-size: 2.05rem; /* Jerarquía clara */
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Coherencia tipográfica con la marca */
+  font-size: 2rem; /* Jerarquía clara */
+  font-weight: 700; /* Negrita limpia */
   color: var(--navy); /* Azul marino */
   margin-bottom: 12px; /* Separación del subtítulo */
 }
@@ -502,7 +552,9 @@ body {
 
 /* Título de la columna de contacto */
 .contact-info h2 {
-  font-size: 2rem; /* Consistente con los demás H2 */
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Misma fuente corporativa de encabezados */
+  font-size: 1.95rem; /* Consistente con los demás H2 */
+  font-weight: 700; /* Negrita limpia */
   color: var(--navy); /* Azul marino */
   margin-bottom: 12px; /* Separación inferior */
 }
@@ -581,14 +633,33 @@ body {
 }
 
 /* =========================================================
-   ADAPTACIÓN PARA TABLETAS Y PANTALLAS MEDIANAS (<= 1024px)
+   ADAPTACIÓN PARA TABLETAS Y LAPTOPS COMPACTAS (<= 1100px)
    ========================================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .nav-content {
     min-height: 118px; /* Ajusta la barra al tamaño intermedio del logo */
   }
   .logo-img {
-    height: 100px; /* Logo grande pero proporcionado para iPad y laptops pequeñas */
+    height: 96px; /* Logo grande pero proporcionado para iPad y laptops */
+  }
+  .logo-link {
+    gap: 12px; /* Acerca levemente el nombre al logo */
+  }
+  .brand-lockup {
+    padding-left: 12px; /* Relleno proporcionado */
+  }
+  .brand-prefix {
+    font-size: 0.68rem; /* Escala limpia de REPRESENTACIONES */
+    letter-spacing: 2.4px; /* Espaciado ajustado */
+  }
+  .brand-main {
+    font-size: 1.5rem; /* Escala proporcionada de KAMADA */
+  }
+  .brand-suffix {
+    font-size: 0.95rem; /* Escala del sufijo C.A. */
+  }
+  .nav-links {
+    gap: 16px; /* Optimiza espacio para los enlaces del menú */
   }
   .section {
     scroll-margin-top: 118px; /* Compensa la nueva altura de barra */
@@ -601,7 +672,7 @@ body {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas cómodas en tableta */
   }
   .hero h1 {
-    font-size: 2.3rem; /* Reduce levemente el titular */
+    font-size: 2.25rem; /* Reduce levemente el titular */
   }
 }
 
@@ -610,34 +681,52 @@ body {
    ========================================================= */
 @media (max-width: 768px) {
   .container {
-    padding: 0 16px; /* Aprovecha mejor el ancho útil en celular */
+    padding: 0 14px; /* Aprovecha mejor el ancho útil en celular */
   }
   .nav-content {
-    min-height: 98px; /* Altura limpia en móvil sin robar demasiada pantalla */
+    min-height: 92px; /* Altura limpia en móvil sin robar demasiada pantalla */
     padding: 8px 0; /* Margen vertical compacto */
+    gap: 10px; /* Espacio seguro entre marca y botón Cotizar */
+  }
+  .logo-link {
+    gap: 10px; /* Acerca logo y nombre en celular */
+    min-width: 0; /* Permite adaptación sin desbordar */
+    flex-shrink: 1; /* Evita empujar el botón Cotizar fuera de la pantalla */
   }
   .logo-img {
-    height: 82px; /* Logo visiblemente grande y nítido en pantalla de teléfono */
+    height: 70px; /* Logo claramente visible en pantalla móvil */
   }
-  .nav-links {
-    gap: 12px; /* Reduce separación en móvil */
+  .brand-lockup {
+    border-left-width: 2px; /* Línea dorada más fina en móvil */
+    padding-left: 10px; /* Relleno compacto */
+  }
+  .brand-prefix {
+    font-size: 0.58rem; /* "REPRESENTACIONES" nítido sin romperse */
+    letter-spacing: 1.6px; /* Espaciado adaptado al ancho móvil */
+  }
+  .brand-main {
+    font-size: 1.15rem; /* "KAMADA" claro y fuerte en celular */
+    letter-spacing: 0.8px; /* Espaciado equilibrado */
+  }
+  .brand-suffix {
+    font-size: 0.8rem; /* ", C.A." proporcional */
   }
   .nav-links a:not(.btn-nav) {
     display: none; /* Oculta enlaces secundarios y deja visible el botón Cotizar */
   }
   .btn-nav {
-    padding: 9px 16px; /* Tamaño táctil cómodo */
-    font-size: 0.9rem; /* Texto limpio */
+    padding: 9px 14px; /* Tamaño táctil cómodo sin quitar espacio a la razón social */
+    font-size: 0.86rem; /* Texto limpio */
   }
   .section {
     padding: 54px 0; /* Reduce espacios muertos en desplazamiento vertical */
-    scroll-margin-top: 98px; /* Compensa la barra móvil al pulsar Cotizar */
+    scroll-margin-top: 92px; /* Compensa la barra móvil al pulsar Cotizar */
   }
   .hero {
-    padding: 68px 0 96px 0; /* Altura balanceada para ver titular y botones sin hacer scroll */
+    padding: 66px 0 94px 0; /* Altura balanceada para ver titular y botones sin hacer scroll */
   }
   .hero h1 {
-    font-size: 1.9rem; /* Evita cortes bruscos de palabras en pantallas angostas */
+    font-size: 1.85rem; /* Evita cortes bruscos de palabras en pantallas angostas */
   }
   .hero p {
     font-size: 1rem; /* Lectura cómoda en celular */
@@ -657,7 +746,7 @@ body {
     margin-bottom: 34px; /* Espacio más compacto antes de las tarjetas */
   }
   .section-header h2 {
-    font-size: 1.65rem; /* Títulos adaptados a móvil */
+    font-size: 1.6rem; /* Títulos adaptados a móvil */
   }
   .pillars-grid,
   .copacking-grid,
@@ -684,5 +773,26 @@ body {
   }
   .product-img-wrap {
     height: 215px; /* Altura óptima para ver cada lata grande en el teléfono */
+  }
+}
+
+/* Ajuste extra para teléfonos muy angostos (<= 410px) */
+@media (max-width: 410px) {
+  .logo-img {
+    height: 58px; /* Mantiene el logo visible dejando aire para la razón social */
+  }
+  .brand-prefix {
+    font-size: 0.5rem; /* Evita saltos de línea en pantallas muy angostas */
+    letter-spacing: 1.1px; /* Compacta levemente las letras */
+  }
+  .brand-main {
+    font-size: 0.98rem; /* Mantiene "KAMADA, C.A." en una sola línea */
+  }
+  .brand-suffix {
+    font-size: 0.72rem; /* Proporcional */
+  }
+  .btn-nav {
+    padding: 8px 11px; /* Botón compacto y limpio */
+    font-size: 0.8rem; /* Lectura nítida */
   }
 }
