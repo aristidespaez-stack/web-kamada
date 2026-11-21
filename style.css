@@ -542,7 +542,122 @@ body {
   margin-top: 40px; /* Separación respecto a las 3 tarjetas */
 }
 
-/* Sección 5: Contacto y formulario comercial */
+/* Sección 5: Tarjeta corporativa de Relación Comercial con Pazam */
+.alliance-section {
+  background-color: var(--white); /* Fondo blanco limpio entre Co-Packing oscuro y Contacto gris claro */
+  padding: 70px 0; /* Espaciado vertical equilibrado */
+}
+
+/* Tarjeta horizontal de dos columnas con acento dorado corporativo */
+.alliance-card {
+  display: grid; /* Divide espacio entre logo aliado y contenido */
+  grid-template-columns: 270px 1fr; /* Columna izquierda fija para el logo y derecha amplia para el texto */
+  gap: 38px; /* Separación limpia entre ambos bloques */
+  align-items: center; /* Centra verticalmente logo y texto */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Degradado sutil profesional */
+  border: 1px solid var(--border-gray); /* Borde perimetral limpio */
+  border-left: 5px solid var(--gold); /* Franja dorada izquierda que destaca la alianza */
+  border-radius: 14px; /* Esquinas redondeadas consistentes con el catálogo */
+  padding: 38px 42px; /* Relleno amplio y ejecutivo */
+  box-shadow: 0 10px 28px rgba(11, 37, 69, 0.07); /* Sombra elegante */
+}
+
+/* Columna izquierda con el logotipo del aliado estratégico */
+.alliance-brand {
+  display: flex; /* Organiza logo y distintivo en columna */
+  flex-direction: column; /* Uno debajo del otro */
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  gap: 14px; /* Separación entre el logo y la píldora inferior */
+  border-right: 1px solid var(--border-gray); /* Línea divisoria sutil hacia el texto */
+  padding-right: 34px; /* Aire antes de la línea divisoria */
+}
+
+/* Logotipo de Pazam Industria Alimenticia dentro de la tarjeta */
+.alliance-logo {
+  max-width: 200px; /* Ancho controlado para buena presencia sin abrumar */
+  max-height: 115px; /* Altura máxima equilibrada */
+  width: auto; /* Mantiene proporción exacta */
+  height: auto; /* Mantiene proporción exacta */
+  object-fit: contain; /* Muestra el logo completo sin recortes */
+}
+
+/* Distintivo breve debajo del logo aliado */
+.alliance-pill {
+  display: inline-block; /* Ajustado al texto */
+  background-color: rgba(19, 64, 116, 0.09); /* Azul océano muy suave */
+  color: var(--ocean); /* Texto en azul corporativo */
+  font-size: 0.74rem; /* Compacto */
+  font-weight: 700; /* Negrita limpia */
+  text-transform: uppercase; /* Mayúsculas formales */
+  letter-spacing: 0.9px; /* Espaciado ejecutivo */
+  padding: 5px 14px; /* Relleno tipo píldora */
+  border-radius: 20px; /* Bordes completamente curvos */
+}
+
+/* Etiqueta superior dorada de la sección Alianza */
+.alliance-tag {
+  display: inline-block; /* Comportamiento en línea */
+  color: var(--gold); /* Dorado corporativo */
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Coherencia con encabezados */
+  font-size: 0.8rem; /* Tamaño sobrio */
+  font-weight: 700; /* Negrita */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: 1.5px; /* Espaciado amplio */
+  margin-bottom: 8px; /* Separación del título */
+}
+
+/* Título principal dentro de la tarjeta de Alianza */
+.alliance-body h2 {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* Misma tipografía de marca */
+  font-size: 1.65rem; /* Tamaño firme sin competir con el Hero */
+  font-weight: 700; /* Negrita */
+  color: var(--navy); /* Azul marino */
+  line-height: 1.25; /* Interlineado limpio */
+  margin-bottom: 14px; /* Espacio antes del párrafo */
+}
+
+/* Texto corporativo de la alianza */
+.alliance-body p {
+  color: var(--text-muted); /* Gris intermedio legible */
+  font-size: 0.97rem; /* Tamaño cómodo */
+  margin-bottom: 24px; /* Separación antes del botón externo */
+}
+
+/* Enlace visible www.pazam.com.ve dentro del párrafo de relación comercial */
+.alliance-inline-link {
+  color: var(--ocean); /* Destaca la dirección web en azul océano */
+  font-weight: 700; /* Negrita para identificación rápida */
+  text-decoration: underline; /* Subrayado claro que confirma que es clicable */
+  transition: color 0.2s ease; /* Cambio suave al pasar el cursor */
+}
+
+/* Efecto hover sobre el enlace www.pazam.com.ve */
+.alliance-inline-link:hover {
+  color: var(--gold); /* Cambia a dorado corporativo al pasar el mouse */
+}
+
+/* Botón corporativo para visitar la web aliada */
+.btn-alliance {
+  display: inline-block; /* Permite relleno y medidas */
+  background-color: var(--navy); /* Azul marino sólido */
+  color: var(--white); /* Texto blanco */
+  font-weight: 600; /* Seminegrita */
+  font-size: 0.95rem; /* Tamaño cómodo */
+  padding: 12px 24px; /* Relleno equilibrado */
+  border-radius: 6px; /* Esquinas redondeadas */
+  text-decoration: none; /* Sin subrayado */
+  text-align: center; /* Centra el texto en móvil */
+  transition: background-color 0.2s ease, transform 0.15s ease; /* Animación fluida */
+}
+
+/* Efecto hover del botón de alianza */
+.btn-alliance:hover {
+  background-color: var(--ocean); /* Cambia a azul océano */
+  transform: translateY(-2px); /* Elevación sutil */
+}
+
+/* Sección 6: Contacto y formulario comercial */
 .contact-grid {
   display: grid; /* Dos columnas en PC */
   grid-template-columns: repeat(2, 1fr); /* Dos columnas balanceadas en escritorio */
@@ -671,6 +786,11 @@ body {
   .copacking-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas cómodas en tableta */
   }
+  .alliance-card {
+    grid-template-columns: 220px 1fr; /* Ajusta la columna izquierda del logo aliado en tableta */
+    gap: 28px; /* Separación proporcional */
+    padding: 32px; /* Relleno compacto */
+  }
   .hero h1 {
     font-size: 2.25rem; /* Reduce levemente el titular */
   }
@@ -753,6 +873,26 @@ body {
   .contact-grid {
     grid-template-columns: 1fr; /* Una sola columna clara para lectura vertical */
     gap: 20px; /* Separación cómoda entre bloques */
+  }
+  .alliance-card {
+    grid-template-columns: 1fr; /* Apila logo aliado arriba y texto abajo en teléfono */
+    padding: 28px 22px; /* Relleno cómodo en pantalla angosta */
+    gap: 22px; /* Separación limpia */
+    text-align: center; /* Centra toda la tarjeta para una estética balanceada */
+    border-left: 1px solid var(--border-gray); /* Quita la franja lateral en móvil */
+    border-top: 5px solid var(--gold); /* Mueve la franja dorada al borde superior */
+  }
+  .alliance-brand {
+    border-right: none; /* Elimina el divisor vertical */
+    border-bottom: 1px solid var(--border-gray); /* Coloca divisor horizontal debajo del logo */
+    padding-right: 0; /* Limpia relleno lateral */
+    padding-bottom: 20px; /* Espacio inferior antes del texto */
+  }
+  .alliance-body h2 {
+    font-size: 1.4rem; /* Escala cómoda en móvil */
+  }
+  .btn-alliance {
+    width: 100%; /* Botón a ancho completo fácil de pulsar con el pulgar */
   }
   .contact-form {
     padding: 22px; /* Relleno interno adaptado a pantallas pequeñas */
