@@ -1,228 +1,237 @@
-<!DOCTYPE html> <!-- Declara que el documento usa el estándar moderno HTML5 -->
-<html lang="es"> <!-- Idioma principal del sitio en español -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Representaciones Kamada, C.A.: planta procesadora de conservas de pescado en Valencia, Venezuela. Marcas Misión Mar y Marguajira, distribución mayorista y servicio de Co-Packing con alianzas estratégicas.">
+  <meta name="keywords" content="Representaciones Kamada, Kamada, Misión Mar, Marguajira, sardinas enlatadas, atún natural, co-packing Venezuela, maquila de conservas, Pazam, Valencia Carabobo">
+  <title>Representaciones Kamada, C.A. | Conservas de Pescado y Co-Packing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra de navegación superior fija -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#inicio" class="logo-link">
+        <img src="img/logo-kamada.png" alt="Logo Representaciones Kamada, C.A." class="logo-img">
+        <div class="brand-lockup">
+          <span class="brand-prefix">Representaciones</span>
+          <span class="brand-main">KAMADA<span class="brand-suffix">, C.A.</span></span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#marcas">Marcas y Productos</a>
+        <a href="#copacking">Co-Packing</a>
+        <a href="#contacto" class="btn-nav">Cotizar</a>
+      </nav>
+    </div>
+  </header>
 
-<head> <!-- Cabecera técnica no visible en pantalla -->
-  <meta charset="UTF-8"> <!-- Codificación para tildes, eñes y símbolos -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escala adaptable a teléfonos, tabletas y PC -->
-  <meta name="description" content="Representaciones Kamada, C.A.: planta procesadora de conservas de pescado en Valencia, Venezuela. Marcas Misión Mar y Marguajira, distribución mayorista y servicio de Co-Packing con alianzas estratégicas."> <!-- Descripción para Google -->
-  <meta name="keywords" content="Representaciones Kamada, Kamada, Misión Mar, Marguajira, sardinas enlatadas, atún natural, co-packing Venezuela, maquila de conservas, Pazam, Valencia Carabobo"> <!-- Palabras clave comerciales -->
-  <title>Representaciones Kamada, C.A. | Conservas de Pescado y Co-Packing</title> <!-- Título en la pestaña del navegador -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Acelera la conexión con Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconecta el servidor de tipografías -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"> <!-- Carga la fuente Montserrat para destacar el nombre corporativo y titulares -->
-  <link rel="stylesheet" href="style.css"> <!-- Enlaza la hoja de estilos local -->
-</head> <!-- Cierra la cabecera técnica -->
+  <!-- Sección 1: Portada principal con fondo del mar difuminado -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="badge">Planta Procesadora en Valencia, Venezuela</span>
+        <h1>Conservas del mar con estándar industrial y abastecimiento continuo</h1>
+        <p>Procesamos sardinas y atún enlatado bajo nuestras marcas <strong>Misión Mar</strong> y <strong>Marguajira</strong>, además de operar líneas de <strong>Co-Packing</strong> para socios comerciales y cadenas en toda Venezuela.</p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary">Solicitar Lista de Precios</a>
+          <a href="#copacking" class="btn-secondary">Alianzas Co-Packing</a>
+          <a href="docs/catalogo-kamada.pdf" download="Catalogo-Kamada.pdf" class="btn-secondary">Descargar Catálogo PDF &darr;</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+        <path d="M0,48 C240,95 480,0 720,42 C960,84 1200,18 1440,54 L1440,90 L0,90 Z"></path>
+      </svg>
+    </div>
+  </section>
 
-<body> <!-- Inicia el contenido visible de la web -->
+  <!-- Sección 2: Respaldo industrial -->
+  <section id="nosotros" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Respaldo Industrial y Calidad Controlada</h2>
+        <p>Operamos desde Valencia, Estado Carabobo, bajo controles térmicos auditados y trazabilidad por lote en cada turno de envasado.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h3>Control Sanitario Riguroso</h3>
+          <p>Selección estricta de materia prima fresca y esterilización comercial certificada para máxima vida útil en anaquel.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Despacho al Mayor</h3>
+          <p>Logística preparada para pedidos por bultos y paletas hacia distribuidores y comercios en todo el territorio nacional.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Rentabilidad y Rotación</h3>
+          <p>Presentaciones de consumo masivo pensadas para proteger el margen comercial del mayorista y asegurar reposición constante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <header class="navbar"> <!-- Barra de navegación superior fija -->
-    <div class="container nav-content"> <!-- Contenedor centrado de identidad de marca y enlaces -->
-      <a href="#inicio" class="logo-link"> <!-- Bloque clicable con el sello y el nombre corporativo -->
-        <img src="img/logo-kamada.png" alt="Logo Representaciones Kamada, C.A." class="logo-img"> <!-- Logotipo circular en img/ -->
-        <div class="brand-lockup"> <!-- Contenedor del nombre corporativo al lado del logo -->
-          <span class="brand-prefix">Representaciones</span> <!-- Línea superior en mayúsculas con acento dorado -->
-          <span class="brand-main">KAMADA<span class="brand-suffix">, C.A.</span></span> <!-- Nombre principal en negrita destacada -->
-        </div> <!-- Cierra el bloque del nombre -->
-      </a> <!-- Cierra enlace del logo -->
-      <nav class="nav-links"> <!-- Menú principal de navegación -->
-        <a href="#nosotros">Nosotros</a> <!-- Baja al respaldo industrial -->
-        <a href="#marcas">Marcas y Productos</a> <!-- Baja al catálogo -->
-        <a href="#copacking">Co-Packing</a> <!-- Baja al apartado de alianzas y maquila -->
-        <a href="#contacto" class="btn-nav">Cotizar</a> <!-- Botón destacado hacia el formulario -->
-      </nav> <!-- Cierra menú -->
-    </div> <!-- Cierra contenedor de barra -->
-  </header> <!-- Cierra encabezado -->
+  <!-- Sección 3: Catálogo unificado en una sola fila de 4 productos -->
+  <section id="marcas" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestras Marcas y Presentaciones</h2>
+        <p>Portafolio comercial de <strong>Misión Mar</strong> y <strong>Marguajira</strong> disponible para distribución regional, nacional e institucional.</p>
+      </div>
 
-  <section id="inicio" class="hero"> <!-- Sección 1: Portada principal con fondo del mar difuminado -->
-    <div class="hero-bg" aria-hidden="true"></div> <!-- Capa exclusiva para img/mar.png con efecto blur/brushed -->
-    <div class="hero-overlay" aria-hidden="true"></div> <!-- Capa de degradado marino suave encima de la foto -->
-    <div class="container hero-inner"> <!-- Contenido nítido por encima del fondo marino -->
-      <div class="hero-text"> <!-- Bloque de texto con ancho controlado -->
-        <span class="badge">Planta Procesadora en Valencia, Venezuela</span> <!-- Etiqueta superior corporativa -->
-        <h1>Conservas del mar con estándar industrial y abastecimiento continuo</h1> <!-- Titular principal H1 -->
-        <p>Procesamos sardinas y atún enlatado bajo nuestras marcas <strong>Misión Mar</strong> y <strong>Marguajira</strong>, además de operar líneas de <strong>Co-Packing</strong> para socios comerciales y cadenas en toda Venezuela.</p> <!-- Propuesta comercial -->
-        <div class="hero-actions"> <!-- Contenedor de botones principales -->
-          <a href="#contacto" class="btn-primary">Solicitar Lista de Precios</a> <!-- Botón dorado de conversión -->
-          <a href="#copacking" class="btn-secondary">Alianzas Co-Packing</a> <!-- Botón secundario hacia co-packing -->
-        </div> <!-- Cierra botones -->
-      </div> <!-- Cierra bloque de texto -->
-    </div> <!-- Cierra contenedor de portada -->
-    <div class="hero-wave" aria-hidden="true"> <!-- Curva de ola al pie de la portada -->
-      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"> <!-- Lienzo vectorial adaptable -->
-        <path d="M0,48 C240,95 480,0 720,42 C960,84 1200,18 1440,54 L1440,90 L0,90 Z"></path> <!-- Forma vectorial que une el mar con la siguiente sección -->
-      </svg> <!-- Cierra SVG -->
-    </div> <!-- Cierra ola -->
-  </section> <!-- Cierra portada -->
+      <div class="products-grid four-cols">
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img src="img/sardines-oil-mision-mar-6oz.png" alt="Sardinas Misión Mar en Aceite Vegetal 6 oz" class="product-img">
+          </div>
+          <div class="product-body">
+            <span class="brand-tag">Misión Mar</span>
+            <h4>Sardinas en Aceite Vegetal (6 oz)</h4>
+            <p>Textura firme y sabor balanceado de alta rotación comercial. Presentación en lata de 6 oz (170 g).</p>
+          </div>
+        </article>
 
-  <section id="nosotros" class="section bg-light"> <!-- Sección 2: Respaldo industrial -->
-    <div class="container"> <!-- Centra el contenido -->
-      <div class="section-header"> <!-- Encabezado centrado -->
-        <h2>Respaldo Industrial y Calidad Controlada</h2> <!-- Título H2 -->
-        <p>Operamos desde Valencia, Estado Carabobo, bajo controles térmicos auditados y trazabilidad por lote en cada turno de envasado.</p> <!-- Descripción de planta -->
-      </div> <!-- Cierra encabezado -->
-      <div class="pillars-grid"> <!-- Cuadrícula de 3 pilares -->
-        <div class="pillar-card"> <!-- Pilar 1 -->
-          <h3>Control Sanitario Riguroso</h3> <!-- Título 1 -->
-          <p>Selección estricta de materia prima fresca y esterilización comercial certificada para máxima vida útil en anaquel.</p> <!-- Detalle 1 -->
-        </div> <!-- Cierra Pilar 1 -->
-        <div class="pillar-card"> <!-- Pilar 2 -->
-          <h3>Despacho al Mayor</h3> <!-- Título 2 -->
-          <p>Logística preparada para pedidos por bultos y paletas hacia distribuidores y comercios en todo el territorio nacional.</p> <!-- Detalle 2 -->
-        </div> <!-- Cierra Pilar 2 -->
-        <div class="pillar-card"> <!-- Pilar 3 -->
-          <h3>Rentabilidad y Rotación</h3> <!-- Título 3 -->
-          <p>Presentaciones de consumo masivo pensadas para proteger el margen comercial del mayorista y asegurar reposición constante.</p> <!-- Detalle 3 -->
-        </div> <!-- Cierra Pilar 3 -->
-      </div> <!-- Cierra cuadrícula de pilares -->
-    </div> <!-- Cierra contenedor -->
-  </section> <!-- Cierra Nosotros -->
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img src="img/sardinas-italiana-marguajira-170g.png" alt="Sardinas Marguajira en Salsa Italiana 170 g" class="product-img">
+          </div>
+          <div class="product-body">
+            <span class="brand-tag gold">Marguajira</span>
+            <h4>Sardinas en Salsa Italiana (170 g)</h4>
+            <p>Salsa condimentada de gran aceptación popular y salida continua en anaquel. Lata de 170 g.</p>
+          </div>
+        </article>
 
-  <section id="marcas" class="section"> <!-- Sección 3: Catálogo unificado en una sola fila de 4 productos -->
-    <div class="container"> <!-- Centra el catálogo -->
-      <div class="section-header"> <!-- Encabezado del catálogo -->
-        <h2>Nuestras Marcas y Presentaciones</h2> <!-- Título -->
-        <p>Portafolio comercial de <strong>Misión Mar</strong> y <strong>Marguajira</strong> disponible para distribución regional, nacional e institucional.</p> <!-- Subtítulo mencionando ambas líneas -->
-      </div> <!-- Cierra encabezado -->
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img src="img/sardinas-aceite-marguajira-170g.png" alt="Sardinas Marguajira en Aceite 170 g" class="product-img">
+          </div>
+          <div class="product-body">
+            <span class="brand-tag gold">Marguajira</span>
+            <h4>Sardinas en Aceite (170 g)</h4>
+            <p>Conserva clásica en aceite vegetal de excelente rendimiento para retail y mayoristas. Lata de 170 g.</p>
+          </div>
+        </article>
 
-      <div class="products-grid four-cols"> <!-- Cuadrícula configurada para 4 productos en una fila en PC, 2 en tablet y 1 en móvil -->
+        <article class="product-card">
+          <div class="product-img-wrap">
+            <img src="img/atun-natural-marguajira-140g.png" alt="Atún al Natural Marguajira 140 g" class="product-img">
+          </div>
+          <div class="product-body">
+            <span class="brand-tag gold">Marguajira</span>
+            <h4>Atún al Natural (140 g)</h4>
+            <p>Alto aporte proteico en presentación ligera ideal para supermercados, distribuidores y foodservice. Lata de 140 g.</p>
+          </div>
+        </article>
+      </div>
 
-        <article class="product-card"> <!-- Producto 1: Misión Mar -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta en dorado al pasar el cursor -->
-            <img src="img/sardines-oil-mision-mar-6oz.png" alt="Sardinas Misión Mar en Aceite Vegetal 6 oz" class="product-img"> <!-- Foto real en img/ -->
-          </div> <!-- Cierra recuadro de imagen -->
-          <div class="product-body"> <!-- Texto de la tarjeta -->
-            <span class="brand-tag">Misión Mar</span> <!-- Etiqueta azul corporativa -->
-            <h4>Sardinas en Aceite Vegetal (6 oz)</h4> <!-- Nombre comercial exacto -->
-            <p>Textura firme y sabor balanceado de alta rotación comercial. Presentación en lata de 6 oz (170 g).</p> <!-- Detalle comercial -->
-          </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 1 -->
+      <!-- Botón de Descarga de Catálogo PDF -->
+      <div style="text-align: center; margin-top: 38px;">
+        <a href="docs/catalogo-kamada.pdf" download="Catalogo-Kamada.pdf" class="btn-primary">
+          Descargar Catálogo de Productos (PDF) &darr;
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <article class="product-card"> <!-- Producto 2: Marguajira Italiana -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta en dorado al pasar el cursor -->
-            <img src="img/sardinas-italiana-marguajira-170g.png" alt="Sardinas Marguajira en Salsa Italiana 170 g" class="product-img"> <!-- Foto real en img/ -->
-          </div> <!-- Cierra recuadro -->
-          <div class="product-body"> <!-- Texto -->
-            <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
-            <h4>Sardinas en Salsa Italiana (170 g)</h4> <!-- Nombre comercial -->
-            <p>Salsa condimentada de gran aceptación popular y salida continua en anaquel. Lata de 170 g.</p> <!-- Detalle -->
-          </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 2 -->
+  <!-- Sección 4: Apartado de Co-Packing con fondo marino degradado -->
+  <section id="copacking" class="section copacking-section">
+    <div class="copacking-bg" aria-hidden="true"></div>
+    <div class="copacking-overlay" aria-hidden="true"></div>
+    <div class="container copacking-inner">
+      <div class="section-header light-header">
+        <span class="badge">Manufactura para Terceros y Marcas Privadas</span>
+        <h2>Co-Packing Pesquero y Alianzas Estratégicas</h2>
+        <p>Integramos nuestra infraestructura de envasado hermético, tratamiento térmico en autoclave y control de calidad a la estrategia comercial de cadenas, importadores y marcas propias que desean escalar sin invertir en planta física.</p>
+      </div>
 
-        <article class="product-card"> <!-- Producto 3: Marguajira Aceite -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta en dorado al pasar el cursor -->
-            <img src="img/sardinas-aceite-marguajira-170g.png" alt="Sardinas Marguajira en Aceite 170 g" class="product-img"> <!-- Foto real en img/ -->
-          </div> <!-- Cierra recuadro -->
-          <div class="product-body"> <!-- Texto -->
-            <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
-            <h4>Sardinas en Aceite (170 g)</h4> <!-- Nombre comercial -->
-            <p>Conserva clásica en aceite vegetal de excelente rendimiento para retail y mayoristas. Lata de 170 g.</p> <!-- Detalle -->
-          </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 3 -->
+      <div class="copacking-grid">
+        <div class="copacking-card">
+          <h3>Envasado para Marca Privada</h3>
+          <p>Procesamos, sellamos y etiquetamos conservas de pescado bajo la identidad visual y especificaciones técnicas de tu organización.</p>
+        </div>
 
-        <article class="product-card"> <!-- Producto 4: Marguajira Atún -->
-          <div class="product-img-wrap"> <!-- Recuadro de la foto que resalta en dorado al pasar el cursor -->
-            <img src="img/atun-natural-marguajira-140g.png" alt="Atún al Natural Marguajira 140 g" class="product-img"> <!-- Foto real en img/ -->
-          </div> <!-- Cierra recuadro -->
-          <div class="product-body"> <!-- Texto -->
-            <span class="brand-tag gold">Marguajira</span> <!-- Etiqueta dorada -->
-            <h4>Atún al Natural (140 g)</h4> <!-- Nombre comercial -->
-            <p>Alto aporte proteico en presentación ligera ideal para supermercados, distribuidores y foodservice. Lata de 140 g.</p> <!-- Detalle -->
-          </div> <!-- Cierra cuerpo -->
-        </article> <!-- Cierra Producto 4 -->
+        <div class="copacking-card">
+          <h3>Alianzas de Suministro Continuo</h3>
+          <p>Construimos convenios operativos a mediano y largo plazo asegurando reserva de capacidad de línea, continuidad de inventario y confidencialidad comercial.</p>
+        </div>
 
-      </div> <!-- Cierra cuadrícula de 4 productos -->
-    </div> <!-- Cierra contenedor de marcas -->
-  </section> <!-- Cierra Marcas -->
+        <div class="copacking-card">
+          <h3>Eficiencia Operativa y Trazabilidad</h3>
+          <p>Respaldamos cada corrida de producción con registros de esterilización, control de peso escurrido y coordinación directa de despacho desde Valencia.</p>
+        </div>
+      </div>
 
-  <section id="copacking" class="section copacking-section"> <!-- Sección 4: Apartado de Co-Packing con fondo marino degradado -->
-    <div class="copacking-bg" aria-hidden="true"></div> <!-- Capa de fondo marino difuminado -->
-    <div class="copacking-overlay" aria-hidden="true"></div> <!-- Velo degradado para garantizar lectura nítida -->
-    <div class="container copacking-inner"> <!-- Contenido elevado sobre el fondo -->
-      <div class="section-header light-header"> <!-- Encabezado claro sobre fondo marino -->
-        <span class="badge">Manufactura para Terceros y Marcas Privadas</span> <!-- Etiqueta superior -->
-        <h2>Co-Packing Pesquero y Alianzas Estratégicas</h2> <!-- Titular exclusivo de Kamada -->
-        <p>Integramos nuestra infraestructura de envasado hermético, tratamiento térmico en autoclave y control de calidad a la estrategia comercial de cadenas, importadores y marcas propias que desean escalar sin invertir en planta física.</p> <!-- Propuesta original -->
-      </div> <!-- Cierra encabezado -->
+      <div class="copacking-cta">
+        <a href="#contacto" class="btn-primary">Proponer Alianza Estratégica</a>
+      </div>
+    </div>
+  </section>
 
-      <div class="copacking-grid"> <!-- Cuadrícula de 3 ventajas del servicio Co-Packing -->
-        <div class="copacking-card"> <!-- Ventaja 1 -->
-          <h3>Envasado para Marca Privada</h3> <!-- Título 1 -->
-          <p>Procesamos, sellamos y etiquetamos conservas de pescado bajo la identidad visual y especificaciones técnicas de tu organización.</p> <!-- Detalle 1 -->
-        </div> <!-- Cierra Ventaja 1 -->
+  <!-- Sección 5: Relación comercial con Pazam Industria Alimenticia -->
+  <section id="alianza" class="section alliance-section">
+    <div class="container">
+      <div class="alliance-card">
+        <div class="alliance-brand">
+          <img src="img/logo-pazam.png" alt="Logo Pazam Industria Alimenticia" class="alliance-logo">
+          <span class="alliance-pill">Aliado Comercial</span>
+        </div>
+        <div class="alliance-body">
+          <span class="alliance-tag">Alianza Estratégica Industrial</span>
+          <h2>¿Requieres salsas, mayonesa o vinagres? Conoce a Pazam Industria Alimenticia</h2>
+          <p>En <strong>Representaciones Kamada, C.A.</strong> mantenemos una sólida relación comercial y alianza estratégica con <strong>Pazam Industria Alimenticia</strong>. Cuando tu empresa, distribuidora o cadena requiera abastecimiento mayorista o servicios de Co-Packing en <strong>mayonesa, salsa inglesa, soya, ajo, kétchup, mostaza y vinagres</strong>, puedes acceder directamente a su portafolio en <a href="https://www.pazam.com.ve" target="_blank" rel="noopener noreferrer" class="alliance-inline-link">www.pazam.com.ve</a>, con el mismo respaldo industrial y despacho a nivel nacional.</p>
+          <a href="https://www.pazam.com.ve" target="_blank" rel="noopener noreferrer" class="btn-alliance">Visitar www.pazam.com.ve &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="copacking-card"> <!-- Ventaja 2 -->
-          <h3>Alianzas de Suministro Continuo</h3> <!-- Título 2 -->
-          <p>Construimos convenios operativos a mediano y largo plazo asegurando reserva de capacidad de línea, continuidad de inventario y confidencialidad comercial.</p> <!-- Detalle 2 -->
-        </div> <!-- Cierra Ventaja 2 -->
+  <!-- Sección 6: Contacto y formulario comercial -->
+  <section id="contacto" class="section bg-light">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Solicita tu Cotización o Reunión Comercial</h2>
+        <p>Escríbenos para recibir precios al mayor de nuestras marcas propias o coordinar una evaluación técnica para proyectos de Co-Packing y alianzas estratégicas.</p>
+        <ul class="contact-list">
+          <li><strong>Correo Comercial:</strong> ventas@kamada.com.ve</li>
+          <li><strong>Planta Industrial:</strong> Valencia, Estado Carabobo, Venezuela</li>
+          <li><strong>Líneas de Negocio:</strong> Misión Mar, Marguajira y Co-Packing</li>
+        </ul>
+      </div>
 
-        <div class="copacking-card"> <!-- Ventaja 3 -->
-          <h3>Eficiencia Operativa y Trazabilidad</h3> <!-- Título 3 -->
-          <p>Respaldamos cada corrida de producción con registros de esterilización, control de peso escurrido y coordinación directa de despacho desde Valencia.</p> <!-- Detalle 3 -->
-        </div> <!-- Cierra Ventaja 3 -->
-      </div> <!-- Cierra cuadrícula Co-Packing -->
+      <form class="contact-form" action="mailto:ventas@kamada.com.ve" method="post" enctype="text/plain">
+        <label for="empresa">Empresa o Razón Social</label>
+        <input type="text" id="empresa" name="Empresa" placeholder="Ej. Distribuidora Central C.A." required>
+        <label for="nombre">Persona de Contacto</label>
+        <input type="text" id="nombre" name="Contacto" placeholder="Nombre y Apellido" required>
+        <label for="telefono">Teléfono / WhatsApp</label>
+        <input type="tel" id="telefono" name="Telefono" placeholder="0414-0000000" required>
+        <label for="interes">Tipo de Solicitud</label>
+        <select id="interes" name="Tipo_Solicitud" required>
+          <option value="Compra Mayorista">Compra Mayorista (Misión Mar / Marguajira)</option>
+          <option value="Co-Packing / Alianza Estrategica">Co-Packing / Alianza Estratégica</option>
+          <option value="Compra Institucional">Suministro Institucional</option>
+        </select>
+        <label for="mensaje">Detalle del Pedido o Proyecto</label>
+        <textarea id="mensaje" name="Detalle" rows="4" placeholder="Indica marca, cantidad de bultos, ciudad o volumen estimado para Co-Packing..." required></textarea>
+        <button type="submit" class="btn-primary full-width">Enviar Solicitud a Ventas</button>
+      </form>
+    </div>
+  </section>
 
-      <div class="copacking-cta"> <!-- Botón centrado de conversión -->
-        <a href="#contacto" class="btn-primary">Proponer Alianza Estratégica</a> <!-- Enlace directo al formulario -->
-      </div> <!-- Cierra botón -->
-    </div> <!-- Cierra contenedor -->
-  </section> <!-- Cierra Co-Packing -->
-
-  <section id="alianza" class="section alliance-section"> <!-- Sección 5: Relación comercial con Pazam Industria Alimenticia -->
-    <div class="container"> <!-- Centra la tarjeta horizontal dentro del ancho de la web -->
-      <div class="alliance-card"> <!-- Tarjeta de dos columnas: logo aliado a la izquierda y texto con enlace a la derecha -->
-        <div class="alliance-brand"> <!-- Columna izquierda con el logotipo de Pazam -->
-          <img src="img/logo-pazam.png" alt="Logo Pazam Industria Alimenticia" class="alliance-logo"> <!-- Asegúrate de tener el archivo en C:\web-kamada\img\logo-pazam.png -->
-          <span class="alliance-pill">Aliado Comercial</span> <!-- Etiqueta breve debajo del logotipo -->
-        </div> <!-- Cierra columna izquierda -->
-        <div class="alliance-body"> <!-- Columna derecha con el detalle de la relación comercial -->
-          <span class="alliance-tag">Alianza Estratégica Industrial</span> <!-- Antetítulo dorado de la sección -->
-          <h2>¿Requieres salsas, mayonesa o vinagres? Conoce a Pazam Industria Alimenticia</h2> <!-- Titular directo orientado al comprador -->
-          <p>En <strong>Representaciones Kamada, C.A.</strong> mantenemos una sólida relación comercial y alianza estratégica con <strong>Pazam Industria Alimenticia</strong>. Cuando tu empresa, distribuidora o cadena requiera abastecimiento mayorista o servicios de Co-Packing en <strong>mayonesa, salsa inglesa, soya, ajo y vinagre</strong>, puedes acceder directamente a su portafolio en <a href="https://www.pazam.com.ve" target="_blank" rel="noopener noreferrer" class="alliance-inline-link">www.pazam.com.ve</a>, con el mismo respaldo industrial y despacho a nivel nacional.</p> <!-- Texto corporativo con enlace clicable -->
-          <a href="https://pazam.com.ve" target="_blank" rel="noopener noreferrer" class="btn-alliance">Visitar www.pazam.com.ve &rarr;</a> <!-- Botón que abre la web de Pazam en pestaña nueva -->
-        </div> <!-- Cierra columna derecha -->
-      </div> <!-- Cierra tarjeta de alianza -->
-    </div> <!-- Cierra contenedor centrado -->
-  </section> <!-- Cierra sección de relación comercial -->
-
-  <section id="contacto" class="section bg-light"> <!-- Sección 6: Contacto y formulario comercial -->
-    <div class="container contact-grid"> <!-- Cuadrícula de dos columnas -->
-      <div class="contact-info"> <!-- Columna izquierda -->
-        <h2>Solicita tu Cotización o Reunión Comercial</h2> <!-- Título cercano y profesional -->
-        <p>Escríbenos para recibir precios al mayor de nuestras marcas propias o coordinar una evaluación técnica para proyectos de Co-Packing y alianzas estratégicas.</p> <!-- Instrucción -->
-        <ul class="contact-list"> <!-- Datos directos -->
-          <li><strong>Correo Comercial:</strong> ventas@kamada.com.ve</li> <!-- Correo -->
-          <li><strong>Planta Industrial:</strong> Valencia, Estado Carabobo, Venezuela</li> <!-- Ubicación -->
-          <li><strong>Líneas de Negocio:</strong> Misión Mar, Marguajira y Co-Packing</li> <!-- Líneas -->
-        </ul> <!-- Cierra lista -->
-      </div> <!-- Cierra columna izquierda -->
-
-      <form class="contact-form" action="mailto:ventas@kamada.com.ve" method="post" enctype="text/plain"> <!-- Formulario hacia ventas@kamada.com.ve -->
-        <label for="empresa">Empresa o Razón Social</label> <!-- Etiqueta empresa -->
-        <input type="text" id="empresa" name="Empresa" placeholder="Ej. Distribuidora Central C.A." required> <!-- Campo empresa -->
-        <label for="nombre">Persona de Contacto</label> <!-- Etiqueta contacto -->
-        <input type="text" id="nombre" name="Contacto" placeholder="Nombre y Apellido" required> <!-- Campo contacto -->
-        <label for="telefono">Teléfono / WhatsApp</label> <!-- Etiqueta teléfono -->
-        <input type="tel" id="telefono" name="Telefono" placeholder="0414-0000000" required> <!-- Campo teléfono -->
-        <label for="interes">Tipo de Solicitud</label> <!-- Etiqueta desplegable -->
-        <select id="interes" name="Tipo_Solicitud" required> <!-- Selector de tipo de cliente -->
-          <option value="Compra Mayorista">Compra Mayorista (Misión Mar / Marguajira)</option> <!-- Opción 1 -->
-          <option value="Co-Packing / Alianza Estrategica">Co-Packing / Alianza Estratégica</option> <!-- Opción 2 -->
-          <option value="Compra Institucional">Suministro Institucional</option> <!-- Opción 3 -->
-        </select> <!-- Cierra selector -->
-        <label for="mensaje">Detalle del Pedido o Proyecto</label> <!-- Etiqueta mensaje -->
-        <textarea id="mensaje" name="Detalle" rows="4" placeholder="Indica marca, cantidad de bultos, ciudad o volumen estimado para Co-Packing..." required></textarea> <!-- Caja multilínea -->
-        <button type="submit" class="btn-primary full-width">Enviar Solicitud a Ventas</button> <!-- Botón de envío -->
-      </form> <!-- Cierra formulario -->
-    </div> <!-- Cierra cuadrícula de contacto -->
-  </section> <!-- Cierra Contacto -->
-
-  <footer class="footer"> <!-- Pie de página -->
-    <div class="container footer-content"> <!-- Contenedor del pie -->
-      <p>&copy; 2026 Representaciones Kamada, C.A. | RIF: J-31175882-8. Todos los derechos reservados. Valencia, Carabobo, Venezuela.</p> <!-- Derechos con razón social completa y RIF -->
-      <p>Ventas y Alianzas: <a href="mailto:ventas@kamada.com.ve">ventas@kamada.com.ve</a></p> <!-- Correo -->
-    </div> <!-- Cierra contenedor del pie -->
-  </footer> <!-- Cierra pie -->
-
-</body> <!-- Cierra cuerpo -->
-
-</html> <!-- Cierra documento -->
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Representaciones Kamada, C.A. | RIF: J-31175882-8. Todos los derechos reservados. Valencia, Carabobo, Venezuela.</p>
+      <p>Ventas y Alianzas: <a href="mailto:ventas@kamada.com.ve">ventas@kamada.com.ve</a></p>
+    </div>
+  </footer>
+</body>
+</html>
